@@ -1,0 +1,66 @@
+site_name: Valt - Gestão Financeira para Bitcoinheiros
+site_description: Documentação oficial do Valt - aplicativo de gestão financeira pessoal para quem usa Bitcoin como unidade de conta
+site_author: btcdoomguy
+site_url: https://valtapp.com
+
+repo_name: Valt
+repo_url: https://github.com/btcdoomguy/valt
+
+theme:
+  name: material
+  language: pt-BR
+  palette:
+    - scheme: slate
+      primary: orange
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Modo claro
+    - scheme: default
+      primary: orange
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Modo escuro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Início: index.md
+  - Guia:
+    - Instalação: guia/instalacao.md
+    - Primeiros Passos: guia/primeiros-passos.md
+    - Conceitos Básicos: guia/conceitos-basicos.md
+  - Funcionalidades:
+    - Contas: funcionalidades/contas.md
+    - Transações: funcionalidades/transacoes.md
+    - Categorias: funcionalidades/categorias.md
+    - Despesas Fixas: funcionalidades/despesas-fixas.md
+    - Preço Médio: funcionalidades/preco-medio.md
+    - Relatórios: funcionalidades/relatorios.md
+  - Referência:
+    - FAQ: referencia/faq.md
+    - Moedas Suportadas: referencia/moedas.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/btcdoomguy/valt
+
+copyright: Copyright &copy; 2026 Valt - Open Source
