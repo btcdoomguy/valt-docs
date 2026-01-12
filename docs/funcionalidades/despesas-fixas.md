@@ -1,4 +1,4 @@
-# Despesas Fixas
+# Despesas Fixas 🔄
 
 As despesas fixas são gastos recorrentes que você pode configurar uma vez e lançar rapidamente todos os meses. Essa funcionalidade economiza tempo e ajuda no planejamento financeiro.
 
@@ -12,7 +12,7 @@ Despesas fixas são gastos que ocorrem regularmente em intervalos previsíveis:
 - **Financiamentos**: Parcelas de carro, empréstimos
 - **Seguros**: Saúde, carro, vida
 
-## Por Que Usar
+## Por Que Usar 🎯
 
 ### Lançamento Rápido
 
@@ -73,7 +73,7 @@ Você pode vincular uma despesa fixa a uma conta específica:
 - Útil para despesas que podem ser pagas de diferentes formas
 - Exemplo: Conta de luz pode ser paga via PIX de qualquer banco
 
-## Histórico de Valores (Ranges)
+## Histórico de Valores (Ranges) 📈
 
 Uma funcionalidade poderosa é o histórico de valores. Quando o valor de uma despesa muda, você pode manter um registro:
 
@@ -134,7 +134,7 @@ Se você quiser temporariamente parar de ver uma despesa fixa (ex: cancelou Netf
 
 Ela não aparecerá na lista principal, mas o histórico é mantido.
 
-## Relatório de Despesas Fixas
+## Relatório de Despesas Fixas 📊
 
 O Valt irá gerar automaticamente um resumo das suas despesas fixas:
 
@@ -144,7 +144,7 @@ O Valt irá gerar automaticamente um resumo das suas despesas fixas:
 
 Isso ajuda a responder: "Quanto preciso por mês só para cobrir despesas fixas?"
 
-## Boas Práticas
+## Boas Práticas ✨
 
 ### Categorização
 
@@ -170,7 +170,7 @@ Use o campo de descrição para anotar a data de vencimento:
 
 O Valt pede uma data inicial para iniciar a exibição da despesa fixa na tela principal. Dependendo da frequência selecionada, essa data serve como base para calcular as próximas ocorrências. Por exemplo, colocar a data inicial numa sexta-feira em uma despesa fixa semanal fará com que o sistema calcule todos os futuros lançamentos para sextas-feiras.
 
-## Exemplos de Configuração
+## Exemplos de Configuração 💡
 
 ### Netflix
 

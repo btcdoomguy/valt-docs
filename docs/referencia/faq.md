@@ -1,8 +1,8 @@
-# FAQ - Perguntas Frequentes
+# FAQ - Perguntas Frequentes ❓
 
 Respostas para as dúvidas mais comuns sobre o Valt.
 
-## Geral
+## Geral 📋
 
 ### O que é o Valt?
 
@@ -27,7 +27,7 @@ O Valt é multiplataforma e funciona em:
 
 Precisa de internet para buscar cotações de Bitcoin e moedas fiat. Porém, você pode usar o app offline para lançar transações - as cotações serão buscadas quando houver conexão.
 
-## Instalação e Configuração
+## Instalação e Configuração 🔧
 
 ### Como instalo o Valt?
 
@@ -57,7 +57,7 @@ Sim, mas os dados não sincronizam automaticamente. Você precisaria:
 2. Abrir com a mesma senha
 3. Gerenciar manualmente qual versão está mais atualizada
 
-## Contas e Transações
+## Contas e Transações 💱
 
 ### Qual a diferença entre conta fiat e conta Bitcoin?
 
@@ -87,7 +87,7 @@ Sim, você pode criar quantas contas precisar. Recomendamos uma conta para cada 
 4. Compare com o extrato real do banco/wallet
 5. Na tela de configurações, avançado > Limpar o cache do saldo em conta
 
-## Preço Médio
+## Preço Médio 📊
 
 ### O que é preço médio?
 
@@ -106,7 +106,7 @@ Não. O Valt é uma ferramenta de auxílio. Para declaração de IR, consulte se
 
 O módulo de Preço Médio é separado das transações normais. Você pode lançar em ambos para ter controle completo, ou usar apenas um deles.
 
-## Relatórios
+## Relatórios 📈
 
 ### Por que meus relatórios estão vazios?
 
@@ -123,7 +123,7 @@ A funcionalidade de exportação está em desenvolvimento.
 
 É quantos meses seu patrimônio atual sustentaria seus gastos, baseado na mediana de despesas mensais.
 
-## Segurança e Privacidade
+## Segurança e Privacidade 🔒
 
 ### Meus dados são enviados para algum servidor?
 
@@ -137,7 +137,7 @@ Sim, ele é criptografado com sua senha. Sem a senha, é impossível acessar os 
 
 O Valt é open-source. Você pode auditar o código no [GitHub](https://github.com/vmabellini/valt).
 
-## Problemas Comuns
+## Problemas Comuns 🛠️
 
 ### O app não abre
 
@@ -168,7 +168,7 @@ Possíveis causas:
 
 Se o arquivo estiver corrompido, restaure um backup.
 
-## Suporte
+## Suporte 🆘
 
 ### Onde reporto um bug?
 
@@ -186,7 +186,7 @@ Abra uma issue no [GitHub](https://github.com/vmabellini/valt/issues) com a tag 
 
 Sim! O Valt é open-source. Veja o repositório no [GitHub](https://github.com/vmabellini/valt) para mais informações sobre como contribuir.
 
-## Outras Perguntas
+## Outras Perguntas 💡
 
 ### O Valt serve para controlar saldo de endereços específicos da minha wallet?
 

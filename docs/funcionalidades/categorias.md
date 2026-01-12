@@ -1,4 +1,4 @@
-# Categorias
+# Categorias 🏷️
 
 As categorias permitem classificar suas transações, facilitando a análise de para onde está indo seu dinheiro e de onde ele vem.
 
@@ -72,7 +72,7 @@ Você pode usar essas categorias ou personalizá-las conforme sua necessidade.
 2. Clique em **Excluir**
 3. Confirme a exclusão
 
-## Subcategorias
+## Subcategorias 📁
 
 O Valt suporta categorias hierárquicas, ou seja, categorias dentro de categorias.
 
@@ -116,7 +116,7 @@ As cores ajudam na identificação visual:
 1. Clique no campo **Cor**
 2. Selecione uma cor da paleta
 
-## Boas Práticas
+## Boas Práticas ✨
 
 ### Estrutura Recomendada
 
@@ -150,7 +150,7 @@ Transferências
 - Exemplo: "Alimentação" é para comida consumida, "Mercado" pode incluir itens de limpeza
 - Siga suas próprias regras consistentemente
 
-## Uso nos Relatórios
+## Uso nos Relatórios 📊
 
 As categorias são fundamentais para os relatórios:
 

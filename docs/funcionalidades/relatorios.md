@@ -1,4 +1,4 @@
-# Relatórios
+# Relatórios 📊
 
 A aba de Relatórios oferece visualizações gráficas e análises dos seus dados financeiros, ajudando você a entender padrões de gastos e acompanhar a evolução do seu patrimônio.
 
@@ -11,7 +11,7 @@ Os relatórios do Valt incluem:
 - **All-Time High**: Pico do patrimônio em Bitcoin
 - **Estatísticas**: Métricas e indicadores
 
-## Totais Mensais
+## Totais Mensais 📅
 
 ### O Que Mostra
 
@@ -42,7 +42,7 @@ O Valt permite alternar a visualização entre:
 
 Ver em satoshis mostra o verdadeiro impacto dos gastos em termos de Bitcoin.
 
-## Gastos por Categoria
+## Gastos por Categoria 🥧
 
 ### O Que Mostra
 
@@ -70,7 +70,7 @@ Um gráfico mostrando:
 - Compare diferentes meses para ver variações
 - Identifique categorias que cresceram muito
 
-## All-Time High (ATH)
+## All-Time High (ATH) 🏆
 
 ### O Que É
 
@@ -83,7 +83,7 @@ O All-Time High mostra o **maior valor que seu patrimônio já atingiu** em term
 - Comparação com valor atual
 - Gráfico de evolução do patrimônio
 
-## Estatísticas
+## Estatísticas 📈
 
 ### O Que Mostra
 
@@ -114,7 +114,7 @@ Após registrar mais de dois anos de transações, VALT consegue demonstrar a su
 !!! note "Em desenvolvimento"
     A exportação de relatórios pode estar disponível em versões futuras.
 
-## Dicas de Uso
+## Dicas de Uso 💡
 
 ### Análise Mensal
 

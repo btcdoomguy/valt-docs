@@ -1,8 +1,8 @@
-# Moedas Suportadas
+# Moedas Suportadas 💱
 
 O Valt suporta 32 moedas fiat diferentes para contas e transações.
 
-## Lista de Moedas
+## Lista de Moedas 🌍
 
 | Código | Nome | Símbolo |
 |--------|------|---------|
@@ -38,7 +38,7 @@ O Valt suporta 32 moedas fiat diferentes para contas e transações.
 | USD | Dólar Americano | $ |
 | ZAR | Rand Sul-Africano | R |
 
-## Moedas Mais Usadas
+## Moedas Mais Usadas ⭐
 
 ### BRL - Real Brasileiro
 
@@ -57,7 +57,7 @@ Segunda maior moeda do mundo. Comum para:
 - Moradores da zona do Euro
 - Operações em corretoras europeias
 
-## Conversão de Moedas
+## Conversão de Moedas 🔄
 
 ### Cotações Automáticas
 
@@ -101,7 +101,7 @@ Os valores em moeda fiat são armazenados com precisão de 2 casas decimais, ade
 !!! note "Exceções"
     Algumas moedas usam subdivisões diferentes (ex: JPY não tem centavos). O Valt trata todas com 2 casas decimais por simplicidade.
 
-## Bitcoin
+## Bitcoin ₿
 
 Além das moedas fiat, o Valt trabalha nativamente com Bitcoin:
 
@@ -123,7 +123,7 @@ Além das moedas fiat, o Valt trabalha nativamente com Bitcoin:
 | 0.0000001 | 10 |
 | 0.00000001 | 1 |
 
-## Fontes de Cotação
+## Fontes de Cotação 📡
 
 ### Bitcoin
 

@@ -1,4 +1,4 @@
-# Contas
+# Contas 🏦
 
 As contas são a base do Valt. Elas representam todos os lugares onde você mantém dinheiro, seja em moeda fiat ou Bitcoin.
 
@@ -11,7 +11,7 @@ O Valt trabalha com dois tipos de contas:
 
 Cada transação no Valt está associada a pelo menos uma conta.
 
-## Contas Fiat
+## Contas Fiat 💵
 
 ### O Que São
 
@@ -41,7 +41,7 @@ Contas fiat representam onde você mantém dinheiro em moeda tradicional:
 
 ### Moedas Suportadas
 
-O Valt suporta mais de 32 moedas fiat diferentes. Veja a lista completa em [Moedas Suportadas](../referencia/moedas.md).
+O Valt suporta mais de 32 moedas fiat diferentes e a lista continua aumentando. Veja a lista completa em [Moedas Suportadas](../referencia/moedas.md).
 
 As mais comuns são:
 
@@ -49,15 +49,15 @@ As mais comuns são:
 - USD (Dólar Americano)
 - EUR (Euro)
 
-## Contas Bitcoin
+## Contas Bitcoin ₿
 
 ### O Que São
 
 Contas Bitcoin representam onde você guarda seus bitcoins:
 
-- Hardware wallets (Ledger, Trezor, Coldcard, BitBox)
+- Hardware wallets
 - Software wallets (Electrum, Blue Wallet, Sparrow)
-- Corretoras (Binance, Mercado Bitcoin, Foxbit)
+- Corretoras
 - Custódia institucional
 - Lightning Network wallets
 
@@ -79,7 +79,7 @@ Contas Bitcoin representam onde você guarda seus bitcoins:
 !!! tip "Satoshis vs BTC"
     Ao informar o saldo inicial, você pode digitar em BTC (ex: 0.001) ou em satoshis (ex: 100000). O Valt armazena internamente tudo em satoshis para máxima precisão.
 
-## Gerenciando Contas
+## Gerenciando Contas ⚙️
 
 ### Editando uma Conta
 
@@ -133,7 +133,7 @@ O saldo de cada conta é exibido:
 2. No resumo total do patrimônio
 3. Convertido para satoshis (para análise em Bitcoin)
 
-## Patrimônio Total
+## Patrimônio Total 💰
 
 Na parte superior da seção de contas, você verá o **Patrimônio Total**, que soma:
 
@@ -143,7 +143,7 @@ Na parte superior da seção de contas, você verá o **Patrimônio Total**, que
 
 Isso dá uma visão completa de quanto você possui.
 
-## Boas Práticas
+## Boas Práticas ✨
 
 ### Organização
 
@@ -151,12 +151,6 @@ Isso dá uma visão completa de quanto você possui.
 2. **Nomes claros**: Use nomes que você reconheça facilmente
 3. **Ícones consistentes**: Use ícones que representem a instituição
 4. **Agrupe por tipo**: Mantenha bancos juntos, wallets juntas
-
-### Quando Criar Novas Contas
-
-- Abriu conta em novo banco? Crie uma conta fiat
-- Comprou nova hardware wallet? Crie uma conta Bitcoin
-- Começou a usar nova corretora? Crie contas para fiat E Bitcoin
 
 ### Quando Usar Saldo Inicial
 

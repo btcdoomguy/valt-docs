@@ -1,8 +1,8 @@
-# Primeiros Passos
+# Primeiros Passos 🚀
 
 Este guia vai ajudá-lo a configurar o Valt e começar a gerenciar suas finanças em poucos minutos.
 
-## Visão Geral da Interface
+## Visão Geral da Interface 🖥️
 
 Ao abrir o Valt, você verá três abas principais na parte superior:
 
@@ -10,7 +10,7 @@ Ao abrir o Valt, você verá três abas principais na parte superior:
 2. **Relatórios** - Gráficos e análises dos seus dados
 3. **Preço Médio** - Cálculo de custo de aquisição de Bitcoin
 
-## Passo 1: Criar Suas Contas
+## Passo 1: Criar Suas Contas 🏦
 
 Antes de lançar transações, você precisa criar as contas que representam onde seu dinheiro está.
 
@@ -26,7 +26,7 @@ Antes de lançar transações, você precisa criar as contas que representam ond
    - **Ícone**: Escolha um ícone para identificar a conta
 5. Clique em **Salvar**
 
-### Criando uma Conta Bitcoin
+### Criando uma Conta Bitcoin ₿
 
 1. Clique no botão **+** para adicionar uma nova conta
 2. Selecione **Conta Bitcoin**
@@ -39,7 +39,7 @@ Antes de lançar transações, você precisa criar as contas que representam ond
 !!! tip "Quantas contas criar?"
     Crie uma conta para cada lugar onde você mantém dinheiro: bancos, corretoras, carteiras Bitcoin, dinheiro em espécie, etc. Isso ajuda a ter uma visão completa do seu patrimônio.
 
-## Passo 2: Configurar Categorias
+## Passo 2: Configurar Categorias 🏷️
 
 O Valt já vem com categorias padrão, mas você pode personalizá-las.
 
@@ -57,7 +57,7 @@ Exemplos de categorias úteis:
 - **Despesas**: Alimentação, Transporte, Moradia, Lazer
 - **Transferências**: Entre contas
 
-## Passo 3: Lançar Sua Primeira Transação
+## Passo 3: Lançar Sua Primeira Transação 📝
 
 Agora vamos registrar uma transação.
 
@@ -88,7 +88,7 @@ Agora vamos registrar uma transação.
 !!! info "Valor em Satoshis"
     O Valt busca automaticamente a cotação do Bitcoin na data da transação. Se você lançar uma despesa em reais, o sistema calculará automaticamente quanto isso representava em satoshis naquele dia.
 
-## Passo 4: Explorar os Relatórios
+## Passo 4: Explorar os Relatórios 📊
 
 Com algumas transações lançadas, vá para a aba **Relatórios** para visualizar:
 
@@ -104,7 +104,7 @@ Acompanhe o pico do seu patrimônio em termos de Bitcoin.
 ### Estatísticas
 Veja métricas como mediana de gastos e cobertura de patrimônio.
 
-## Passo 5: Configurar Despesas Fixas (Opcional)
+## Passo 5: Configurar Despesas Fixas (Opcional) 🔄
 
 Se você tem gastos recorrentes, configure-os para facilitar o lançamento:
 
@@ -128,7 +128,7 @@ Agora que você conhece o básico, explore:
 - [Transações](../funcionalidades/transacoes.md) - Todos os tipos de transações disponíveis
 - [Preço Médio](../funcionalidades/preco-medio.md) - Configure o cálculo de custo de aquisição
 
-## Dicas Finais
+## Dicas Finais 💡
 
 1. **Seja consistente**: Lance suas transações regularmente para ter dados precisos
 2. **Use categorias**: Uma boa categorização facilita a análise posterior

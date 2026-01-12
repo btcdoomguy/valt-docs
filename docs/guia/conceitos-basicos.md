@@ -1,14 +1,14 @@
-# Conceitos Básicos
+# Conceitos Básicos 📚
 
 Este guia explica os conceitos fundamentais do Valt e como ele difere de aplicativos financeiros tradicionais.
 
-## Bitcoin como Unidade de Conta
+## Bitcoin como Unidade de Conta ₿
 
 O diferencial do Valt é mostrar todas as suas finanças através da perspectiva do Bitcoin. Mas o que isso significa na prática?
 
 ### O Problema da Inflação
 
-Quando você olha para uma transação de 5 anos atrás e vê "R$ 1.000", esse valor não representa o mesmo poder de compra de hoje. A inflação corrói o valor do dinheiro ao longo do tempo.
+Quando você olha para uma transação de 5 anos atrás e vê "R$ 1.000", esse valor não representa o mesmo poder de compra de hoje. A inflação corrói o valor do dinheiro ao longo do tempo. Moedas fiduciárias foram projetadas para escravizarem a população, drenando o valor do trabalho de quem produz e redirecionando para o bolso dos parasitas e vagabundos.
 
 ### A Solução do Valt
 
@@ -30,7 +30,7 @@ Você comprou um celular em janeiro de 2020 por R$ 3.000.
 
 O Valt mostra essa realidade: seu celular não custou "apenas" R$ 3.000, ele custou o equivalente a R$ 30.000 em poder de compra futuro.
 
-## Tipos de Contas
+## Tipos de Contas 🏦
 
 O Valt trabalha com dois tipos fundamentais de contas:
 
@@ -56,7 +56,7 @@ Representam onde você guarda seus bitcoins:
 
 Os valores são armazenados em **satoshis** para máxima precisão.
 
-## Tipos de Transações
+## Tipos de Transações 💱
 
 O Valt oferece seis tipos de transações para cobrir todos os cenários:
 
@@ -105,7 +105,7 @@ Venda de Bitcoin.
 - Venda P2P
 - Qualquer conversão de BTC para moeda fiat
 
-## Sats / Valor Atual em Sats
+## Sats / Valor Atual em Sats ⚡
 
 Todas as transações fiduciárias no Valt recebem também o valor relativo em sats de acordo com o fechamento daquela data, bem como uma coluna que demonstra o preço atual daquela quantidade de sats no preço atual.
 
@@ -130,7 +130,7 @@ Isso permite que você veja o **custo de oportunidade** de cada gasto. Por exemp
 
 O Valt não está dizendo que você não deveria ter jantado. Está mostrando uma perspectiva diferente sobre o valor do dinheiro ao longo do tempo.
 
-## Preço Médio de Aquisição
+## Preço Médio de Aquisição 📊
 
 Para quem investe em Bitcoin, saber o **preço médio** de compra é essencial, tanto para facilitar operações fiscais quanto para saber sua evolução patrimonial.
 
@@ -156,7 +156,7 @@ Método internacional onde as primeiras unidades compradas são consideradas as 
 - **Controle pessoal**: Saber se você está no lucro ou prejuízo
 - **Estratégia de venda**: Decidir quando vender com base no preço médio
 
-## Cotações e Preços
+## Cotações e Preços 💹
 
 O Valt busca cotações de diferentes fontes (com planos de expandir os sources para garantir o funcionamento):
 
@@ -177,7 +177,7 @@ O Valt busca cotações de diferentes fontes (com planos de expandir os sources 
 
 Além disso o repositório do Valt possui uma lista de histórico de preços das moedas disponíveis com dados desde 2010. Fique à vontade para utilizar em seus projetos!
 
-## Privacidade e Segurança
+## Privacidade e Segurança 🔒
 
 ### Dados Locais
 

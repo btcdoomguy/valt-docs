@@ -1,8 +1,8 @@
-# Preço Médio
+# Preço Médio 📊
 
 O módulo de Preço Médio (ou Custo Médio de Aquisição) é uma ferramenta essencial para quem investe em Bitcoin e precisa calcular quanto pagou, em média, pelos seus bitcoins.
 
-## Por Que Calcular o Preço Médio
+## Por Que Calcular o Preço Médio 🎯
 
 ### Controle Pessoal
 
@@ -23,11 +23,11 @@ No Brasil, para declarar ganho de capital na venda de Bitcoin, você precisa:
 !!! warning "Importante"
     Vendas acima de R$ 35.000 por mês podem estar sujeitas a imposto sobre ganho de capital. Consulte um contador para orientação específica.
 
-## Métodos de Cálculo
+## Métodos de Cálculo 🧮
 
 O Valt oferece dois métodos de cálculo:
 
-### Regra Brasileira
+### 🇧🇷 Regra Brasileira
 
 **Como funciona**:
 
@@ -44,7 +44,7 @@ O Valt oferece dois métodos de cálculo:
 | Mar | Venda | -0.05 | 3.000 | 0.25 | 43.333 |
 | Abr | Compra | 0.1 | 6.000 | 0.35 | 45.714 |
 
-### FIFO (First In, First Out)
+### 🌎 FIFO (First In, First Out)
 
 Método internacional onde as primeiras unidades compradas são consideradas as primeiras vendidas.
 
@@ -177,7 +177,7 @@ Para cada venda, o Valt calcula:
 
 Você pode ter transações de compra de BTC e também lançar no perfil de preço médio, mas são registros independentes.
 
-## Exportação para IR
+## Exportação para IR 📄
 
 O Valt pode gerar relatórios úteis para a declaração de IR:
 
@@ -207,7 +207,7 @@ Você pode criar vários perfis para diferentes finalidades:
 
 - Um único perfil com todas as operações
 
-## Boas Práticas
+## Boas Práticas ✨
 
 ### Mantenha Atualizado
 
@@ -225,7 +225,7 @@ Periodicamente, verifique se o estoque no Valt bate com o que você realmente te
 
 Se você faz trading e também hold de longo prazo, considere perfis separados para facilitar a análise.
 
-## Cenários Comuns
+## Cenários Comuns 📋
 
 ### Começando do Zero
 

@@ -1,4 +1,4 @@
-# Transações
+# Transações 💱
 
 As transações são o coração do Valt. Cada movimentação financeira é registrada como uma transação, permitindo que você tenha controle total sobre suas finanças.
 
@@ -6,16 +6,16 @@ As transações são o coração do Valt. Cada movimentação financeira é regi
 
 O Valt oferece seis tipos de transações para cobrir todos os cenários possíveis:
 
-| Tipo | Descrição | Exemplo |
-|------|-----------|---------|
+| Tipo | Descrição | Exemplo                  |
+|------|-----------|--------------------------|
 | **Fiat** | Entrada ou saída em conta fiat | Salário, compras, contas |
-| **Bitcoin** | Entrada ou saída em conta Bitcoin | Mining, doações |
-| **Fiat para Fiat** | Transferência entre contas fiat | TED, PIX entre bancos |
+| **Bitcoin** | Entrada ou saída em conta Bitcoin | Mining, doações          |
+| **Fiat para Fiat** | Transferência entre contas fiat | TED, PIX entre bancos    |
 | **Bitcoin para Bitcoin** | Transferência entre wallets | Da corretora para Ledger |
-| **Fiat para Bitcoin** | Compra de Bitcoin | Compra na Binance |
-| **Bitcoin para Fiat** | Venda de Bitcoin | Venda no Mercado Bitcoin |
+| **Fiat para Bitcoin** | Compra de Bitcoin | Compra na Binance        |
+| **Bitcoin para Fiat** | Venda de Bitcoin | Venda na Bipa            |
 
-## Transação Fiat
+## Transação Fiat 💵
 
 ### Quando Usar
 
@@ -55,22 +55,7 @@ Use para qualquer entrada ou saída de dinheiro em moeda tradicional:
 !!! tip "Calculadora Integrada"
     No campo valor, você pode digitar expressões matemáticas como `150+35.50` e o Valt calculará automaticamente.
 
-## Transação Bitcoin
-
-### Quando Usar
-
-Use para entradas ou saídas de Bitcoin que não envolvem troca por moeda fiat:
-
-**Receitas**:
-- Mineração
-- Airdrops
-- Presentes recebidos em BTC
-- Pagamentos em Bitcoin
-
-**Despesas**:
-- Doações em Bitcoin
-- Presentes dados em BTC
-- Compras pagas diretamente em Bitcoin
+## Transação Bitcoin ₿
 
 ### Como Lançar
 
@@ -90,16 +75,6 @@ Use para entradas ou saídas de Bitcoin que não envolvem troca por moeda fiat:
 4. Clique em **Salvar**
 
 ## Fiat para Fiat
-
-### Quando Usar
-
-Use para transferências entre suas contas em moeda fiat:
-
-- PIX de um banco para outro
-- TED/DOC
-- Transferência para conta de terceiros (que você controla)
-- Câmbio de moedas (Real para Dólar)
-- Saque do banco para carteira física
 
 ### Como Lançar
 
@@ -123,15 +98,6 @@ Use para transferências entre suas contas em moeda fiat:
 
 ## Bitcoin para Bitcoin
 
-### Quando Usar
-
-Use para transferências entre suas wallets Bitcoin:
-
-- Da corretora para hardware wallet
-- Entre hardware wallets diferentes
-- Para Lightning Network
-- Consolidação de UTXOs
-
 ### Como Lançar
 
 1. Clique em **Nova Transação**
@@ -149,16 +115,7 @@ Use para transferências entre suas wallets Bitcoin:
 
 4. Clique em **Salvar**
 
-## Fiat para Bitcoin (Compra)
-
-### Quando Usar
-
-Use quando você compra Bitcoin:
-
-- Compra em corretora (Binance, Mercado Bitcoin, Foxbit)
-- Compra P2P
-- Compra em ATM de Bitcoin
-- Qualquer aquisição de BTC com moeda fiat
+## Fiat para Bitcoin (Compra) 🛒
 
 ### Como Lançar
 
@@ -179,14 +136,6 @@ Use quando você compra Bitcoin:
 
 ## Bitcoin para Fiat (Venda)
 
-### Quando Usar
-
-Use quando você vende Bitcoin:
-
-- Venda em corretora
-- Venda P2P
-- Qualquer conversão de BTC para moeda fiat
-
 ### Como Lançar
 
 1. Clique em **Nova Transação**
@@ -204,7 +153,7 @@ Use quando você vende Bitcoin:
 
 4. Clique em **Salvar**
 
-## Cálculo automático do valor em satoshis
+## Cálculo automático do valor em satoshis ⚡
 
 ### O Que É
 
@@ -244,7 +193,7 @@ Isso permite que você veja o **custo de oportunidade** de cada gasto:
 !!! warning "Atenção"
     A exclusão não pode ser desfeita.
 
-## Filtros e Busca
+## Filtros e Busca 🔍
 
 ### Filtrar por Data
 
@@ -267,7 +216,7 @@ Use a barra de busca para encontrar transações por:
 - Categoria
 - Valor
 
-## Boas Práticas
+## Boas Práticas ✨
 
 ### Consistência
 
