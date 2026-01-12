@@ -87,10 +87,9 @@ Jan/2024 - atual:    R$ 1.700
 
 ### Como Funciona
 
-1. Edite a despesa fixa
-2. Vá para **Histórico de Valores**
-3. Adicione um novo período com o novo valor
-4. O período anterior é automaticamente fechado
+1. Edite a despesa fixa, alterando o valor atual ou o período da recorrência
+2. O período anterior é automaticamente fechado
+3. Visualize o histórico através do menu de contexto na tela de administração das despesas fixas
 
 ### Benefícios
 
@@ -104,6 +103,8 @@ Quando chegar a hora de pagar uma despesa fixa:
 
 1. Na seção de **Despesas Fixas** na tela principal, localize a despesa e clique duas vezes ou aperte Enter
 2. A tela de adicionar transação será aberta com os dados pré-preenchidos. Edite o que for necessário e pronto. Aquela transação estará vinculada à sua despesa fixa.
+
+DICAS: você pode também realizar outras operações como ignorar aquela despesa fixa somente naquele mês, ou manualmente vincular uma despesa fixa a uma transação existente ao manter a despesa fixa desejada selecionada no menu lateral e clicando com o botão direito em uma transação, aonde aparecerá a opção de Vincular a Despesa Fixa.
 
 ## Gerenciando Despesas Fixas
 
@@ -121,7 +122,7 @@ Quando chegar a hora de pagar uma despesa fixa:
 3. Confirme
 
 !!! note "Nota"
-    Excluir uma despesa fixa não remove as transações já lançadas.
+    Excluir uma despesa fixa não remove as transações já lançadas, apenas remove o vínculo entre elas.
 
 ### Pausando
 
@@ -135,7 +136,7 @@ Ela não aparecerá na lista principal, mas o histórico é mantido.
 
 ## Relatório de Despesas Fixas
 
-O Valt pode gerar um resumo das suas despesas fixas:
+O Valt irá gerar automaticamente um resumo das suas despesas fixas:
 
 - Total mensal de compromissos
 - Quanto representa do seu orçamento

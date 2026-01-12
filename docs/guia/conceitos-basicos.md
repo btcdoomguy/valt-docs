@@ -105,9 +105,11 @@ Venda de Bitcoin.
 - Venda P2P
 - Qualquer conversão de BTC para moeda fiat
 
-## AutoSatAmount: O Valor em Satoshis
+## Sats / Valor Atual em Sats
 
-Uma das funcionalidades mais poderosas do Valt é o **AutoSatAmount**.
+Todas as transações fiduciárias no Valt recebem também o valor relativo em sats de acordo com o fechamento daquela data, bem como uma coluna que demonstra o preço atual daquela quantidade de sats no preço atual.
+
+Com isso, você consegue observar o custo de oportunidade de todas as suas transações passadas.
 
 ### Como Funciona
 
@@ -116,6 +118,8 @@ Quando você lança uma transação em moeda fiat, o Valt automaticamente:
 1. Busca a cotação do Bitcoin na data da transação
 2. Calcula quantos satoshis aquele valor representava
 3. Armazena esse valor junto com a transação
+
+Caso a transação seja registrada na data atual ou em data futura, a coluna Sats só será preenchida após o fechamento do mercado.
 
 ### Por Que Isso Importa
 
@@ -126,16 +130,9 @@ Isso permite que você veja o **custo de oportunidade** de cada gasto. Por exemp
 
 O Valt não está dizendo que você não deveria ter jantado. Está mostrando uma perspectiva diferente sobre o valor do dinheiro ao longo do tempo.
 
-### Estados do AutoSatAmount
-
-- **Pendente**: Aguardando busca da cotação
-- **Processado**: Cotação encontrada e valor calculado
-- **Manual**: Você informou o valor manualmente
-- **Indisponível**: Cotação não encontrada para a data
-
 ## Preço Médio de Aquisição
 
-Para quem investe em Bitcoin, saber o **preço médio** de compra é essencial, especialmente para fins fiscais.
+Para quem investe em Bitcoin, saber o **preço médio** de compra é essencial, tanto para facilitar operações fiscais quanto para saber sua evolução patrimonial.
 
 ### O Que É
 
@@ -147,7 +144,7 @@ O Valt oferece dois métodos:
 
 #### Regra Brasileira
 
-Segue as normas da Receita Federal do Brasil. O preço médio é recalculado a cada nova compra, considerando o estoque anterior e a nova aquisição.
+O preço médio é recalculado a cada nova compra, considerando o estoque anterior e a nova aquisição.
 
 #### FIFO (First In, First Out)
 
@@ -155,13 +152,13 @@ Método internacional onde as primeiras unidades compradas são consideradas as 
 
 ### Por Que Usar
 
-- **Declaração de IR**: Necessário para calcular ganho de capital
+- **Declaração de IR**: Facilita o preenchimento do seu stack com KYC
 - **Controle pessoal**: Saber se você está no lucro ou prejuízo
 - **Estratégia de venda**: Decidir quando vender com base no preço médio
 
 ## Cotações e Preços
 
-O Valt busca cotações de diferentes fontes:
+O Valt busca cotações de diferentes fontes (com planos de expandir os sources para garantir o funcionamento):
 
 ### Bitcoin
 
@@ -177,7 +174,8 @@ O Valt busca cotações de diferentes fontes:
 - Cotações são buscadas automaticamente em background
 - Requer conexão com internet
 - Dados históricos são armazenados localmente para consultas offline
-- Atualizações acontecem a cada 30 segundos (preço atual) e 2 minutos (histórico)
+
+Além disso o repositório do Valt possui uma lista de histórico de preços das moedas disponíveis com dados desde 2010. Fique à vontade para utilizar em seus projetos!
 
 ## Privacidade e Segurança
 

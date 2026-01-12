@@ -46,7 +46,7 @@ Ver em satoshis mostra o verdadeiro impacto dos gastos em termos de Bitcoin.
 
 ### O Que Mostra
 
-Um gráfico de pizza (ou donut) mostrando:
+Um gráfico mostrando:
 - Distribuição percentual dos gastos
 - Valor absoluto por categoria
 - Ranking das maiores categorias
@@ -76,24 +76,12 @@ Um gráfico de pizza (ou donut) mostrando:
 
 O All-Time High mostra o **maior valor que seu patrimônio já atingiu** em termos de Bitcoin.
 
-### Por Que Importa
-
-Para bitcoinheiros, o ATH é um indicador importante:
-- Mostra seu "pico" de riqueza em sats
-- Permite acompanhar se você está acumulando ou perdendo
-- Diferente de ver em fiat, que pode subir por inflação
-
 ### O Que Mostra
 
 - Valor do ATH em satoshis
 - Data em que ocorreu
 - Comparação com valor atual
 - Gráfico de evolução do patrimônio
-
-### Interpretação
-
-- **Patrimônio atual > ATH anterior**: Você está acumulando bem
-- **Patrimônio atual < ATH**: Seus gastos superaram os aportes
 
 ## Estatísticas
 
@@ -119,45 +107,7 @@ Este indicador responde: "Se eu parasse de ganhar dinheiro hoje, por quantos mes
 - Mediana de gastos: R$ 5.000/mês
 - Cobertura: 10 meses
 
-### Taxa de Poupança
-
-Quanto da sua renda você está conseguindo guardar:
-
-**Cálculo**: `(Receitas - Despesas) ÷ Receitas × 100`
-
-**Exemplo**:
-- Receitas: R$ 10.000
-- Despesas: R$ 7.000
-- Taxa de poupança: 30%
-
-## Filtros de Período
-
-Todos os relatórios podem ser filtrados por período:
-
-### Opções Padrão
-
-- Este mês
-- Mês anterior
-- Este ano
-- Ano anterior
-- Últimos 3 meses
-- Últimos 6 meses
-- Últimos 12 meses
-
-### Período Personalizado
-
-1. Selecione "Personalizado"
-2. Escolha data inicial
-3. Escolha data final
-4. Aplique o filtro
-
-## Filtros por Conta
-
-Você pode filtrar os relatórios por:
-
-- **Todas as contas**: Visão consolidada
-- **Conta específica**: Apenas transações daquela conta
-- **Grupo de contas**: Selecione múltiplas
+Após registrar mais de dois anos de transações, VALT consegue demonstrar a sua inflação particular, com os seus gastos atuais dos 12 meses vs o período anterior. VALT também irá demonstrar esses gastos em sats, muitas vezes demonstrando como a moeda fiat vai perdendo o valor enquanto o bitcoin preserva seu poder de compra (a não ser que você esteja em um triste bear market!).
 
 ## Exportação
 
@@ -183,34 +133,10 @@ Use os relatórios para definir e acompanhar metas:
 
 ### Visualize em Bitcoin
 
-Alternar para visualização em satoshis dá uma perspectiva diferente:
+Observar tudo em satoshis dá uma perspectiva diferente:
 - Gastos parecem maiores (custo de oportunidade)
 - Motivação para economizar
 - Visão de longo prazo
-
-## Interpretando os Dados
-
-### Tendências
-
-Procure por:
-- **Tendência de alta em gastos**: Pode indicar inflação de estilo de vida
-- **Tendência de queda em receitas**: Sinal de alerta
-- **Sazonalidade**: Gastos maiores em certos meses do ano
-
-### Anomalias
-
-Identifique:
-- Meses com gastos muito acima do normal
-- Categorias com crescimento repentino
-- Transações atípicas
-
-### Ações
-
-Com base nos relatórios:
-- Corte gastos em categorias infladas
-- Renegocie contratos (aluguel, serviços)
-- Cancele assinaturas não utilizadas
-- Aumente aportes em Bitcoin
 
 ## Próximos Passos
 

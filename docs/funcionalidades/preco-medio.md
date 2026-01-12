@@ -29,8 +29,6 @@ O Valt oferece dois métodos de cálculo:
 
 ### Regra Brasileira
 
-Este é o método exigido pela Receita Federal do Brasil.
-
 **Como funciona**:
 
 1. A cada compra, o preço médio é recalculado
