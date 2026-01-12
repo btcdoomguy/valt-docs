@@ -1,7 +1,7 @@
 site_name: Valt - Personal Finance for Bitcoiners
 site_description: Official Valt documentation - personal finance app for those who use Bitcoin as a unit of account
 site_author: btcdoomguy
-site_url: https://valtapp.com
+site_url: https://btcdoomguy.github.io/valt-docs/
 
 repo_name: Valt
 repo_url: https://github.com/btcdoomguy/valt
@@ -106,10 +106,10 @@ markdown_extensions:
 extra:
   alternate:
     - name: English
-      link: /en/
+      link: en/
       lang: en
     - name: Português
-      link: /
+      link: ./
       lang: pt
   social:
     - icon: fontawesome/brands/github
