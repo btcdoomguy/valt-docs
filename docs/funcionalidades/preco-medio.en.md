@@ -1,8 +1,8 @@
-# Average Price
+# Average Price 📊
 
 The Average Price (or Average Acquisition Cost) module is an essential tool for those who invest in Bitcoin and need to calculate how much they paid, on average, for their bitcoins.
 
-## Why Calculate Average Price
+## Why Calculate Average Price 🎯
 
 ### Personal Control
 
@@ -23,11 +23,11 @@ In the US, to report capital gains on Bitcoin sales, you need to:
 !!! warning "Important"
     Sales may be subject to capital gains tax. Consult an accountant or tax professional for specific guidance.
 
-## Calculation Methods
+## Calculation Methods 🧮
 
 Valt offers two calculation methods:
 
-### Brazilian Rule
+### 🇧🇷 Brazilian Rule
 
 **How it works**:
 
@@ -44,7 +44,7 @@ Valt offers two calculation methods:
 | Mar | Sell | -0.05 | 3,000 | 0.25 | 43,333 |
 | Apr | Buy | 0.1 | 6,000 | 0.35 | 45,714 |
 
-### FIFO (First In, First Out)
+### 🌎 FIFO (First In, First Out)
 
 International method where the first units purchased are considered the first sold.
 
@@ -177,7 +177,7 @@ For each sale, Valt calculates:
 
 You can have Bitcoin purchase transactions and also enter them in the average price profile, but they are independent records.
 
-## Export for Taxes
+## Export for Taxes 📄
 
 Valt can generate useful reports for tax declaration:
 
@@ -207,7 +207,7 @@ You can create several profiles for different purposes:
 
 - A single profile with all operations
 
-## Best Practices
+## Best Practices ✨
 
 ### Keep Updated
 
@@ -225,7 +225,7 @@ Periodically verify that the stock in Valt matches what you actually have in you
 
 If you do trading and also long-term hold, consider separate profiles to facilitate analysis.
 
-## Common Scenarios
+## Common Scenarios 📋
 
 ### Starting from Zero
 

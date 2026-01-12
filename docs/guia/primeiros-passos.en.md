@@ -1,8 +1,8 @@
-# Getting Started
+# Getting Started 🚀
 
 This guide will help you set up Valt and start managing your finances in just a few minutes.
 
-## Interface Overview
+## Interface Overview 🖥️
 
 When you open Valt, you'll see three main tabs at the top:
 
@@ -10,7 +10,7 @@ When you open Valt, you'll see three main tabs at the top:
 2. **Reports** - Charts and analysis of your data
 3. **Average Price** - Bitcoin acquisition cost calculation
 
-## Step 1: Create Your Accounts
+## Step 1: Create Your Accounts 🏦
 
 Before recording transactions, you need to create accounts that represent where your money is.
 
@@ -26,7 +26,7 @@ Before recording transactions, you need to create accounts that represent where 
    - **Icon**: Choose an icon to identify the account
 5. Click **Save**
 
-### Creating a Bitcoin Account
+### Creating a Bitcoin Account ₿
 
 1. Click the **+** button to add a new account
 2. Select **Bitcoin Account**
@@ -39,7 +39,7 @@ Before recording transactions, you need to create accounts that represent where 
 !!! tip "How many accounts to create?"
     Create an account for each place where you keep money: banks, exchanges, Bitcoin wallets, cash, etc. This helps you have a complete view of your wealth.
 
-## Step 2: Set Up Categories
+## Step 2: Set Up Categories 🏷️
 
 Valt comes with default categories, but you can customize them.
 
@@ -57,7 +57,7 @@ Examples of useful categories:
 - **Expenses**: Food, Transportation, Housing, Entertainment
 - **Transfers**: Between accounts
 
-## Step 3: Record Your First Transaction
+## Step 3: Record Your First Transaction 📝
 
 Now let's record a transaction.
 
@@ -88,7 +88,7 @@ Now let's record a transaction.
 !!! info "Value in Satoshis"
     Valt automatically fetches the Bitcoin price on the transaction date. If you record an expense in dollars, the system will automatically calculate how much that represented in satoshis on that day.
 
-## Step 4: Explore Reports
+## Step 4: Explore Reports 📊
 
 With some transactions recorded, go to the **Reports** tab to view:
 
@@ -104,7 +104,7 @@ Track the peak of your wealth in Bitcoin terms.
 ### Statistics
 View metrics like median spending and wealth coverage.
 
-## Step 5: Set Up Fixed Expenses (Optional)
+## Step 5: Set Up Fixed Expenses (Optional) 🔄
 
 If you have recurring expenses, set them up for easier recording:
 
@@ -128,7 +128,7 @@ Now that you know the basics, explore:
 - [Transactions](../funcionalidades/transacoes.md) - All available transaction types
 - [Average Price](../funcionalidades/preco-medio.md) - Configure acquisition cost calculation
 
-## Final Tips
+## Final Tips 💡
 
 1. **Be consistent**: Record your transactions regularly for accurate data
 2. **Use categories**: Good categorization makes later analysis easier

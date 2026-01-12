@@ -1,4 +1,4 @@
-# Transactions
+# Transactions 💱
 
 Transactions are the heart of Valt. Every financial movement is recorded as a transaction, allowing you to have complete control over your finances.
 
@@ -15,7 +15,7 @@ Valt offers six transaction types to cover all possible scenarios:
 | **Fiat to Bitcoin** | Bitcoin purchase | Purchase on Coinbase |
 | **Bitcoin to Fiat** | Bitcoin sale | Sale on Kraken |
 
-## Fiat Transaction
+## Fiat Transaction 💵
 
 ### When to Use
 
@@ -55,7 +55,7 @@ Use for any entry or exit of money in traditional currency:
 !!! tip "Built-in Calculator"
     In the amount field, you can type mathematical expressions like `150+35.50` and Valt will calculate automatically.
 
-## Bitcoin Transaction
+## Bitcoin Transaction ₿
 
 ### How to Record
 
@@ -115,7 +115,7 @@ Use for any entry or exit of money in traditional currency:
 
 4. Click **Save**
 
-## Fiat to Bitcoin (Purchase)
+## Fiat to Bitcoin (Purchase) 🛒
 
 ### How to Record
 
@@ -153,7 +153,7 @@ Use for any entry or exit of money in traditional currency:
 
 4. Click **Save**
 
-## Automatic Satoshi Value Calculation
+## Automatic Satoshi Value Calculation ⚡
 
 ### What It Is
 
@@ -193,7 +193,7 @@ This allows you to see the **opportunity cost** of each expense:
 !!! warning "Attention"
     Deletion cannot be undone.
 
-## Filters and Search
+## Filters and Search 🔍
 
 ### Filter by Date
 
@@ -216,7 +216,7 @@ Use the search bar to find transactions by:
 - Category
 - Amount
 
-## Best Practices
+## Best Practices ✨
 
 ### Consistency
 

@@ -1,8 +1,8 @@
-# Basic Concepts
+# Basic Concepts 📚
 
 This guide explains the fundamental concepts of Valt and how it differs from traditional financial apps.
 
-## Bitcoin as a Unit of Account
+## Bitcoin as a Unit of Account ₿
 
 Valt's differentiator is showing all your finances through a Bitcoin perspective. But what does this mean in practice?
 
@@ -30,7 +30,7 @@ You bought a phone in January 2020 for $300.
 
 Valt shows this reality: your phone didn't cost "just" $300, it cost the equivalent of $3,000 in future purchasing power.
 
-## Account Types
+## Account Types 🏦
 
 Valt works with two fundamental types of accounts:
 
@@ -56,7 +56,7 @@ Represent where you store your bitcoins:
 
 Values are stored in **satoshis** for maximum precision.
 
-## Transaction Types
+## Transaction Types 💱
 
 Valt offers six transaction types to cover all scenarios:
 
@@ -105,7 +105,7 @@ Bitcoin sale.
 - P2P sale
 - Any BTC conversion to fiat currency
 
-## Sats / Current Sats Value
+## Sats / Current Sats Value ⚡
 
 All fiat transactions in Valt also receive the relative value in sats according to that date's closing price, as well as a column showing the current price of that amount of sats at today's price.
 
@@ -130,7 +130,7 @@ This allows you to see the **opportunity cost** of each expense. For example:
 
 Valt isn't saying you shouldn't have had dinner. It's showing a different perspective on the value of money over time.
 
-## Average Acquisition Price
+## Average Acquisition Price 📊
 
 For Bitcoin investors, knowing the **average price** is essential, both for tax operations and to track your wealth evolution.
 
@@ -156,7 +156,7 @@ An international method where the first units purchased are considered the first
 - **Personal Control**: Know if you're in profit or loss
 - **Selling Strategy**: Decide when to sell based on average price
 
-## Quotes and Prices
+## Quotes and Prices 💹
 
 Valt fetches quotes from different sources (with plans to expand sources to ensure functionality):
 
@@ -177,7 +177,7 @@ Valt fetches quotes from different sources (with plans to expand sources to ensu
 
 Additionally, the Valt repository has a price history list of available currencies with data since 2010. Feel free to use it in your projects!
 
-## Privacy and Security
+## Privacy and Security 🔒
 
 ### Local Data
 

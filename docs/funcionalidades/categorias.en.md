@@ -1,4 +1,4 @@
-# Categories
+# Categories 🏷️
 
 Categories allow you to classify your transactions, making it easier to analyze where your money is going and where it comes from.
 
@@ -72,7 +72,7 @@ You can use these categories or customize them according to your needs.
 2. Click **Delete**
 3. Confirm the deletion
 
-## Subcategories
+## Subcategories 📁
 
 Valt supports hierarchical categories, meaning categories within categories.
 
@@ -116,7 +116,7 @@ Colors help with visual identification:
 1. Click the **Color** field
 2. Select a color from the palette
 
-## Best Practices
+## Best Practices ✨
 
 ### Recommended Structure
 
@@ -150,7 +150,7 @@ Transfers
 - Example: "Food" is for consumed food, "Groceries" can include cleaning supplies
 - Follow your own rules consistently
 
-## Use in Reports
+## Use in Reports 📊
 
 Categories are fundamental for reports:
 

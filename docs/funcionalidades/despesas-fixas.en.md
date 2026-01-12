@@ -1,4 +1,4 @@
-# Fixed Expenses
+# Fixed Expenses 🔄
 
 Fixed expenses are recurring costs that you can configure once and quickly record every month. This feature saves time and helps with financial planning.
 
@@ -12,7 +12,7 @@ Fixed expenses are costs that occur regularly at predictable intervals:
 - **Financing**: Car payments, loans
 - **Insurance**: Health, car, life
 
-## Why Use Them
+## Why Use Them 🎯
 
 ### Quick Recording
 
@@ -73,7 +73,7 @@ You can link a fixed expense to a specific account:
 - Useful for expenses that can be paid different ways
 - Example: Electric bill can be paid via transfer from any bank
 
-## Value History (Ranges)
+## Value History (Ranges) 📈
 
 A powerful feature is value history. When the value of an expense changes, you can keep a record:
 
@@ -134,7 +134,7 @@ If you want to temporarily stop seeing a fixed expense (e.g., canceled Netflix):
 
 It won't appear in the main list, but the history is preserved.
 
-## Fixed Expenses Report
+## Fixed Expenses Report 📊
 
 Valt will automatically generate a summary of your fixed expenses:
 
@@ -144,7 +144,7 @@ Valt will automatically generate a summary of your fixed expenses:
 
 This helps answer: "How much do I need per month just to cover fixed expenses?"
 
-## Best Practices
+## Best Practices ✨
 
 ### Categorization
 
@@ -170,7 +170,7 @@ Use the description field to note the due date:
 
 Valt asks for a start date to begin displaying the fixed expense on the main screen. Depending on the selected frequency, this date serves as a base to calculate the next occurrences. For example, setting the start date on a Friday for a weekly fixed expense will make the system calculate all future entries for Fridays.
 
-## Configuration Examples
+## Configuration Examples 💡
 
 ### Netflix
 

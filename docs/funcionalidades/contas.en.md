@@ -1,4 +1,4 @@
-# Accounts
+# Accounts 🏦
 
 Accounts are the foundation of Valt. They represent all the places where you keep money, whether in fiat currency or Bitcoin.
 
@@ -11,7 +11,7 @@ Valt works with two types of accounts:
 
 Every transaction in Valt is associated with at least one account.
 
-## Fiat Accounts
+## Fiat Accounts 💵
 
 ### What They Are
 
@@ -49,7 +49,7 @@ The most common are:
 - EUR (Euro)
 - GBP (British Pound)
 
-## Bitcoin Accounts
+## Bitcoin Accounts ₿
 
 ### What They Are
 
@@ -79,7 +79,7 @@ Bitcoin accounts represent where you store your bitcoins:
 !!! tip "Satoshis vs BTC"
     When entering the initial balance, you can type in BTC (e.g., 0.001) or in satoshis (e.g., 100000). Valt stores everything internally in satoshis for maximum precision.
 
-## Managing Accounts
+## Managing Accounts ⚙️
 
 ### Editing an Account
 
@@ -133,7 +133,7 @@ Each account's balance is shown:
 2. In the total wealth summary
 3. Converted to satoshis (for Bitcoin analysis)
 
-## Total Wealth
+## Total Wealth 💰
 
 At the top of the accounts section, you'll see the **Total Wealth**, which sums:
 
@@ -143,7 +143,7 @@ At the top of the accounts section, you'll see the **Total Wealth**, which sums:
 
 This gives a complete view of how much you own.
 
-## Best Practices
+## Best Practices ✨
 
 ### Organization
 

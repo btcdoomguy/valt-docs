@@ -1,25 +1,25 @@
-# Installation
+# Installation 📥
 
 Valt is available for Windows, Linux, and macOS. Choose your operating system's installation method below.
 
-## System Requirements
+## System Requirements 📋
 
 - **Operating System**: Windows 10/11, Linux (Ubuntu 20.04+, Fedora 35+, etc.) or macOS 11+
 - **RAM**: 4 GB (minimum), 8 GB (recommended)
 - **Disk Space**: 100 MB for installation + space for your data
 - **Internet Connection**: Required for fetching Bitcoin and fiat currency quotes
 
-## Download
+## Download ⬇️
 
 Visit the [Releases page on GitHub](https://github.com/vmabellini/valt/releases) and download the latest version for your operating system.
 
-### Windows
+### 🪟 Windows
 
 1. Download the `Valt-Windows-vXXXX.zip` file (where XXXX is the latest version)
 2. Extract to a folder of your choice
 3. Run the `Valt.exe` file
 
-### Linux
+### 🐧 Linux
 
 1. Download the `Valt-Linux-vXXXX.zip` file (where XXXX is the latest version)
 2. Extract to a folder of your choice
@@ -28,7 +28,7 @@ Visit the [Releases page on GitHub](https://github.com/vmabellini/valt/releases)
 !!! tip "Tip for Linux"
     You can create a shortcut in the applications menu by creating a `.desktop` file in the `~/.local/share/applications/` folder.
 
-### macOS
+### 🍎 macOS
 
 1. Download the `Valt-MacOs-experimental-vXXXX.zip` file (where XXXX is the latest version)
 2. Open the DMG file
@@ -38,7 +38,7 @@ Visit the [Releases page on GitHub](https://github.com/vmabellini/valt/releases)
 !!! warning "About macOS"
     Valt is compatible with macOS but is not officially supported. Some layout and functionality issues may occur.
 
-## First Run
+## First Run 🎬
 
 When running Valt for the first time, you'll see the initial selection screen with two options:
 
@@ -63,7 +63,7 @@ When running Valt for the first time, you'll see the initial selection screen wi
 3. Enter the password
 4. Click **Open**
 
-## Updates
+## Updates 🔄
 
 Valt automatically checks for new available versions. When an update is available, you'll see an indicator in the interface.
 
@@ -74,7 +74,7 @@ To update manually:
 3. Run the new version and delete the old one
 4. Your data is preserved in the `.valt` file
 
-## Backup
+## Backup 💾
 
 Your data is in the `.valt` file you created. To backup:
 
@@ -85,6 +85,6 @@ Your data is in the `.valt` file you created. To backup:
 !!! tip "Backup Tip"
     The `.valt` file is an encrypted SQLite database. You can store it in cloud services like Google Drive or Dropbox, as it's password protected.
 
-## Next Steps
+## Next Steps ➡️
 
 Now that Valt is installed, go to [Getting Started](primeiros-passos.md) to set up your accounts and start using it.

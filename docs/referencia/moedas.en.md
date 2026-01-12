@@ -1,44 +1,44 @@
-# Supported Currencies
+# Supported Currencies 💱
 
 Valt supports 32 different fiat currencies for accounts and transactions.
 
-## Currency List
+## Currency List 🌍
 
 | Code | Name | Symbol |
 |------|------|--------|
 | AUD | Australian Dollar | A$ |
-| BGN | Bulgarian Lev | lv |
+| BGN | Bulgarian Lev | лв |
 | BRL | Brazilian Real | R$ |
 | CAD | Canadian Dollar | C$ |
 | CHF | Swiss Franc | CHF |
 | CNY | Chinese Yuan | ¥ |
-| CZK | Czech Koruna | Kc |
+| CZK | Czech Koruna | Kč |
 | DKK | Danish Krone | kr |
 | EUR | Euro | € |
 | GBP | British Pound | £ |
 | HKD | Hong Kong Dollar | HK$ |
 | HUF | Hungarian Forint | Ft |
 | IDR | Indonesian Rupiah | Rp |
-| ILS | Israeli New Shekel | ILS |
-| INR | Indian Rupee | INR |
+| ILS | Israeli New Shekel | ₪ |
+| INR | Indian Rupee | ₹ |
 | ISK | Icelandic Krona | kr |
 | JPY | Japanese Yen | ¥ |
-| KRW | South Korean Won | KRW |
+| KRW | South Korean Won | ₩ |
 | MXN | Mexican Peso | $ |
 | MYR | Malaysian Ringgit | RM |
 | NOK | Norwegian Krone | kr |
 | NZD | New Zealand Dollar | NZ$ |
-| PHP | Philippine Peso | PHP |
-| PLN | Polish Zloty | zl |
+| PHP | Philippine Peso | ₱ |
+| PLN | Polish Zloty | zł |
 | RON | Romanian Leu | lei |
 | SEK | Swedish Krona | kr |
 | SGD | Singapore Dollar | S$ |
-| THB | Thai Baht | THB |
-| TRY | Turkish Lira | TRY |
+| THB | Thai Baht | ฿ |
+| TRY | Turkish Lira | ₺ |
 | USD | US Dollar | $ |
 | ZAR | South African Rand | R |
 
-## Most Used Currencies
+## Most Used Currencies ⭐
 
 ### USD - US Dollar
 
@@ -54,7 +54,7 @@ Second largest currency in the world. Common for:
 
 The default currency for Brazilian users. All average price calculations for Brazilian taxes should use BRL.
 
-## Currency Conversion
+## Currency Conversion 🔄
 
 ### Automatic Quotes
 
@@ -98,7 +98,7 @@ Fiat currency values are stored with 2 decimal places precision, adequate for mo
 !!! note "Exceptions"
     Some currencies use different subdivisions (e.g., JPY has no cents). Valt treats all with 2 decimal places for simplicity.
 
-## Bitcoin
+## Bitcoin ₿
 
 Besides fiat currencies, Valt works natively with Bitcoin:
 
@@ -120,7 +120,7 @@ Besides fiat currencies, Valt works natively with Bitcoin:
 | 0.0000001 | 10 |
 | 0.00000001 | 1 |
 
-## Quote Sources
+## Quote Sources 📡
 
 ### Bitcoin
 

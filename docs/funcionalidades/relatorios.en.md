@@ -1,4 +1,4 @@
-# Reports
+# Reports 📊
 
 The Reports tab offers graphical visualizations and analysis of your financial data, helping you understand spending patterns and track the evolution of your wealth.
 
@@ -11,7 +11,7 @@ Valt's reports include:
 - **All-Time High**: Peak of wealth in Bitcoin
 - **Statistics**: Metrics and indicators
 
-## Monthly Totals
+## Monthly Totals 📅
 
 ### What It Shows
 
@@ -42,7 +42,7 @@ Valt allows you to toggle the view between:
 
 Viewing in satoshis shows the true impact of expenses in Bitcoin terms.
 
-## Spending by Category
+## Spending by Category 🥧
 
 ### What It Shows
 
@@ -70,7 +70,7 @@ A chart showing:
 - Compare different months to see variations
 - Identify categories that grew significantly
 
-## All-Time High (ATH)
+## All-Time High (ATH) 🏆
 
 ### What It Is
 
@@ -83,7 +83,7 @@ The All-Time High shows the **highest value your wealth has ever reached** in Bi
 - Comparison with current value
 - Wealth evolution chart
 
-## Statistics
+## Statistics 📈
 
 ### What It Shows
 
@@ -114,7 +114,7 @@ After recording more than two years of transactions, Valt can show your personal
 !!! note "In development"
     Report export may be available in future versions.
 
-## Usage Tips
+## Usage Tips 💡
 
 ### Monthly Analysis
 
