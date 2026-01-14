@@ -29,6 +29,7 @@ plugins:
             Fixed Expenses: Despesas Fixas
             Average Price: Preço Médio
             Reports: Relatórios
+            Import and Export: Importar e Exportar
             Reference: Referência
             Supported Currencies: Moedas Suportadas
         - locale: en
@@ -48,6 +49,7 @@ plugins:
             Despesas Fixas: Fixed Expenses
             Preço Médio: Average Price
             Relatórios: Reports
+            Importar e Exportar: Import and Export
             Referência: Reference
             Moedas Suportadas: Supported Currencies
 
@@ -88,6 +90,7 @@ nav:
     - Fixed Expenses: funcionalidades/despesas-fixas.md
     - Average Price: funcionalidades/preco-medio.md
     - Reports: funcionalidades/relatorios.md
+    - Import and Export: funcionalidades/importar-exportar.md
   - Reference:
     - FAQ: referencia/faq.md
     - Supported Currencies: referencia/moedas.md

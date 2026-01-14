@@ -32,7 +32,7 @@ mkdocs gh-deploy
 
 ## Key Context
 
-- All content is in Brazilian Portuguese (pt-BR)
+- All content is in Brazilian Portuguese (pt-BR) and English (en-US)
 - The Material theme uses a dark (slate) / light toggle with orange primary color
 - Navigation uses tabs, sections, and expandable items
 - Enabled markdown extensions: admonition, details, superfences, tabbed content, keyboard keys, tables, TOC with permalinks
