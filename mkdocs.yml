@@ -31,6 +31,7 @@ plugins:
             Reports: Relatórios
             Import and Export: Importar e Exportar
             Goals: Metas
+            MCP Server: Servidor MCP
             Reference: Referência
             Supported Currencies: Moedas Suportadas
         - locale: en
@@ -52,6 +53,7 @@ plugins:
             Relatórios: Reports
             Importar e Exportar: Import and Export
             Metas: Goals
+            Servidor MCP: MCP Server
             Referência: Reference
             Moedas Suportadas: Supported Currencies
 
@@ -94,6 +96,7 @@ nav:
     - Reports: funcionalidades/relatorios.md
     - Import and Export: funcionalidades/importar-exportar.md
     - Goals: funcionalidades/metas.md
+    - MCP Server: funcionalidades/mcp-server.md
   - Reference:
     - FAQ: referencia/faq.md
     - Supported Currencies: referencia/moedas.md
