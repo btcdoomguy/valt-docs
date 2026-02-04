@@ -1,0 +1,127 @@
+site_name: Valt - Personal Finance for Bitcoiners
+site_description: Official Valt documentation - personal finance app for those who use Bitcoin as a unit of account
+site_author: btcdoomguy
+site_url: https://btcdoomguy.github.io/valt-docs/
+
+repo_name: Valt
+repo_url: https://github.com/btcdoomguy/valt
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: pt
+          default: true
+          name: Português
+          build: true
+          site_name: Valt - Gestão Financeira para Bitcoinheiros
+          nav_translations:
+            Home: Início
+            Guide: Guia
+            Installation: Instalação
+            Getting Started: Primeiros Passos
+            Basic Concepts: Conceitos Básicos
+            Features: Funcionalidades
+            Accounts: Contas
+            Transactions: Transações
+            Categories: Categorias
+            Fixed Expenses: Despesas Fixas
+            Average Price: Preço Médio
+            Reports: Relatórios
+            Import and Export: Importar e Exportar
+            Goals: Metas
+            MCP Server: Servidor MCP
+            Reference: Referência
+            Supported Currencies: Moedas Suportadas
+        - locale: en
+          name: English
+          build: true
+          site_name: Valt - Personal Finance for Bitcoiners
+          nav_translations:
+            Início: Home
+            Guia: Guide
+            Instalação: Installation
+            Primeiros Passos: Getting Started
+            Conceitos Básicos: Basic Concepts
+            Funcionalidades: Features
+            Contas: Accounts
+            Transações: Transactions
+            Categorias: Categories
+            Despesas Fixas: Fixed Expenses
+            Preço Médio: Average Price
+            Relatórios: Reports
+            Importar e Exportar: Import and Export
+            Metas: Goals
+            Servidor MCP: MCP Server
+            Referência: Reference
+            Moedas Suportadas: Supported Currencies
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: slate
+      primary: orange
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Light mode
+    - scheme: default
+      primary: orange
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Dark mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Guide:
+    - Installation: guia/instalacao.md
+    - Getting Started: guia/primeiros-passos.md
+    - Basic Concepts: guia/conceitos-basicos.md
+  - Features:
+    - Accounts: funcionalidades/contas.md
+    - Transactions: funcionalidades/transacoes.md
+    - Categories: funcionalidades/categorias.md
+    - Fixed Expenses: funcionalidades/despesas-fixas.md
+    - Average Price: funcionalidades/preco-medio.md
+    - Reports: funcionalidades/relatorios.md
+    - Import and Export: funcionalidades/importar-exportar.md
+    - Goals: funcionalidades/metas.md
+    - MCP Server: funcionalidades/mcp-server.md
+  - Reference:
+    - FAQ: referencia/faq.md
+    - Supported Currencies: referencia/moedas.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.keys
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  alternate:
+    - name: English
+      link: en/
+      lang: en
+    - name: Português
+      link: ./
+      lang: pt
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/btcdoomguy/valt
+
+copyright: Copyright &copy; 2026 Valt - Open Source
