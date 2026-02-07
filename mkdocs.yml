@@ -31,6 +31,7 @@ plugins:
             Reports: Relatórios
             Import and Export: Importar e Exportar
             Goals: Metas
+            Assets: Ativos
             MCP Server: Servidor MCP
             Reference: Referência
             Supported Currencies: Moedas Suportadas
@@ -53,6 +54,7 @@ plugins:
             Relatórios: Reports
             Importar e Exportar: Import and Export
             Metas: Goals
+            Ativos: Assets
             Servidor MCP: MCP Server
             Referência: Reference
             Moedas Suportadas: Supported Currencies
@@ -96,6 +98,7 @@ nav:
     - Reports: funcionalidades/relatorios.md
     - Import and Export: funcionalidades/importar-exportar.md
     - Goals: funcionalidades/metas.md
+    - Assets: funcionalidades/ativos.md
     - MCP Server: funcionalidades/mcp-server.md
   - Reference:
     - FAQ: referencia/faq.md
