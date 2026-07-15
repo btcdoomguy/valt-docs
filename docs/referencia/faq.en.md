@@ -115,9 +115,10 @@ Check:
 2. If the period filter is correct
 3. If transactions have categories assigned (for category report)
 
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Reports/ReportsView.axaml + src/Valt.Infra/Services/CsvExport/CsvExportService.cs -->
 ### Can I export reports?
 
-The export feature is in development.
+No. The **Reports** tab has no report export feature. You can export transactions via CSV from the main menu (**Export Transactions...**).
 
 ### What does "Wealth Coverage" mean?
 

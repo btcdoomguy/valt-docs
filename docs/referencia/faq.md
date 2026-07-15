@@ -115,9 +115,10 @@ Verifique:
 2. Se o filtro de período está correto
 3. Se as transações têm categorias atribuídas (para relatório por categoria)
 
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Reports/ReportsView.axaml + src/Valt.Infra/Services/CsvExport/CsvExportService.cs -->
 ### Posso exportar os relatórios?
 
-A funcionalidade de exportação está em desenvolvimento.
+Não. A aba **Relatórios** não possui exportação de relatórios. Você pode exportar as transações em CSV pelo menu principal (**Exportar Transações...**).
 
 ### O que significa "Cobertura do Patrimônio"?
 
