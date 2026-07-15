@@ -196,9 +196,13 @@ NO! Valt is a tool for managing Bitcoin balances, but it doesn't do direct UTXO 
 
 You can create Bitcoin accounts to represent Lightning balances, but there's no direct integration with Lightning nodes.
 
+<!-- Source: src/Valt.UI/Views/Main/MainView.axaml lines 70-74 + CsvImportExecutor.cs + CsvExportService.cs -->
 ### Can I import data from other apps?
 
-Currently there's no automatic import feature. You need to record transactions manually.
+Yes. Valt can import and export transactions via CSV from the main menu
+(**Import Transactions...** / **Export Transactions...**). See [Import and Export](../funcionalidades/importar-exportar.md)
+for the file format and wizard steps. You will still need to convert the CSV from other apps to
+Valt's column format before importing.
 
 ### Does Valt have a mobile version?
 

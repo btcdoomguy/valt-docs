@@ -196,9 +196,13 @@ NÃO! O Valt é uma ferramenta para gerenciar saldos em Bitcoin, mas não faz ge
 
 Você pode criar contas Bitcoin para representar saldos em Lightning, mas não há integração direta com nodes Lightning.
 
+<!-- Source: src/Valt.UI/Views/Main/MainView.axaml lines 70-74 + CsvImportExecutor.cs + CsvExportService.cs -->
 ### Posso importar dados de outros apps?
 
-Atualmente não há funcionalidade de importação automática. Você precisa lançar as transações manualmente.
+Sim. O Valt pode importar e exportar transações via CSV pelo menu principal
+(**Importar Transações...** / **Exportar Transações...**). Veja [Importar e Exportar](../funcionalidades/importar-exportar.md)
+para o formato do arquivo e os passos do assistente. Você ainda precisará converter o CSV de outros apps para
+o formato de colunas do Valt antes de importar.
 
 ### O Valt tem versão mobile?
 

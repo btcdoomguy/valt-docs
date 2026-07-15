@@ -82,8 +82,9 @@ Seus dados estão no arquivo `.valt` que você criou. Para fazer backup:
 2. Copie o arquivo `.valt` para um local seguro (HD externo, nuvem, etc.)
 3. Faça isso regularmente!
 
+<!-- Source: src/Valt.Infra/Valt.Infra.csproj + src/Valt.Infra/DataAccess/LocalDatabase.cs -->
 !!! tip "Dica de Backup"
-    O arquivo `.valt` é um banco de dados SQLite criptografado. Você pode mantê-lo em serviços de nuvem como Google Drive ou Dropbox, pois ele está protegido por senha.
+    O arquivo `.valt` é um banco de dados LiteDB criptografado. Você pode mantê-lo em serviços de nuvem como Google Drive ou Dropbox, pois ele está protegido por senha.
 
 ## Próximos Passos ➡️
 
