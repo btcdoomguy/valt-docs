@@ -1,139 +1,287 @@
 # Reports 📊
 
-The Reports tab offers graphical visualizations and analysis of your financial data, helping you understand spending patterns and track the evolution of your wealth.
+The **Reports** tab shows a consolidated view of your wealth, BTC stack, income and expense analyses, and market indicators. All values can be viewed in your main fiat currency or under a custom BTC price simulation.
 
-<!-- Source: src/Valt.UI/Views/Main/Tabs/Reports/ReportsView.axaml + ReportsViewModel.cs -->
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Reports/ReportsView.axaml lines 31-159 + language.resx -->
 ## Overview
 
-The Reports tab provides summary dashboards and detailed analyses of your financial data, including wealth overview, monthly totals, spending by category, all-time high, statistics, simulated prices, indicators, leveraged positions, and BTC loans.
+The **Reports** tab has four main areas:
 
-## Monthly Totals 📅
+1. **Summary** — dashboards for **Wealth**, **Your all-time high**, **Your Stack**, **Statistics**, **Indicators**, **Simulated Prices**, **Leverage Positions** (when data exists), and **BTC Loans** (when data exists).
+2. **Wealth Overview** — line chart of wealth over time.
+3. **Monthly Totals** — line chart and detailed month-by-month table.
+4. **By Categories** — horizontal bar charts for **Expenses** and **Income**, with filters by accounts and categories.
 
-### What It Shows
+!!! note "Secure Mode"
+    When **Secure Mode** is enabled, the Reports tab shows only the message *Leave Secure Mode to see the data*. No charts, panels, or data are displayed.
 
-A bar chart with:
-- **Income**: Green bars (or positive color)
-- **Expenses**: Red bars (or negative color)
-- **Balance**: Difference between income and expenses
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Reports/ReportsView.axaml lines 40-74 + FixedPriceConfigViewModel.cs -->
+## Simulate a Custom BTC Price
 
-### How to Use
+At the top of the **Summary** section, the **BTC Price Simulation** bar shows the current BTC price and the simulation controls.
 
-1. Go to the **Reports** tab
-2. Select **Monthly Totals**
-3. Choose the period (current year, last 12 months, custom)
-4. View the chart
+### How to use
 
-### Possible Analyses
+1. Click **Simulate**.
+2. In the **Custom BTC Price** modal, enter a price in your main currency.
+3. Click **Simulate** again.
+4. A **SIMULATION** badge appears. The **Wealth**, **Your Stack**, **Simulated Prices**, **Leverage Positions**, and **BTC Loans** panels recalculate with the simulated price.
+5. Click **Reset** to return to the live BTC price.
 
-- Identify months with above-normal spending
-- See seasonality (e.g., higher expenses in December)
-- Compare evolution over time
-- Check if you're spending more than you earn
+### Validation
 
-### Bitcoin View
+- The price field is required.
+- The value must be a valid decimal.
+- The value must be non-negative.
+- The error messages are *Price is required* and *Price must be non-negative.*
 
-Valt allows you to toggle the view between:
-- **Fiat currency**: Values in dollars/euros
-- **Satoshis**: Values converted to Bitcoin
+!!! note "What is not affected"
+    The custom price does not change historical data. **Your all-time high**, **Statistics**, **Indicators**, **Wealth Overview**, **Monthly Totals**, and **By Categories** keep using live or historical data.
 
-Viewing in satoshis shows the true impact of expenses in Bitcoin terms.
+### Relationship with the Simulated Prices panel
 
-## Spending by Category 🥧
+The Fixed Price Bar is a global override of the live BTC price. The **Simulated Prices** panel is a separate list of up to 6 scenarios (percentage of the current price or fixed USD price). When the custom price is active, the **Simulated Prices** panel still shows the configured scenarios, but the baseline price becomes the custom price, not the live price. The configuration is opened by the panel's gear icon, in the **Simulated Prices Configuration** modal. Each line can be **Percentage** or **Fixed Price**, with a minimum percentage of 5%.
 
-### What It Shows
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Reports/ReportsView.axaml lines 76-159 + Panels/*.cs + language.resx -->
+## Summary Dashboards
 
-A chart showing:
-- Percentage distribution of expenses
-- Absolute value per category
-- Ranking of largest categories
+The **Summary** section displays up to eight panels. Each panel shows a title, icon, and rows of label-value pairs. The **Leverage Positions** and **BTC Loans** panels only appear when you have the corresponding data.
 
-### How to Use
+!!! info "Conditional visibility"
+    The **Leverage Positions** panel only appears when you have at least one visible leveraged position included in net worth. The **BTC Loans** panel only appears when you have at least one active BTC-backed loan.
 
-1. In the **Reports** tab, select **Spending by Category**
-2. Choose the desired period
-3. View the distribution
+### Wealth
 
-### Possible Analyses
+Title: **Wealth**
 
-- Identify where most of the money goes
-- Discover categories with excessive spending
-- Compare distribution between periods
-- Find savings opportunities
+| Label | Value |
+|--------|-------|
+| **Total (as BTC)** | Total wealth represented in BTC |
+| **Total (as Fiat)** | Total wealth in main fiat currency |
+| **BTC** | BTC stack in BTC |
+| **Fiat** | Non-BTC wealth in main fiat currency |
+| **Total (in USD)** | Total wealth in USD (only when main currency is not USD) |
+| **My Assets** | External assets value in main fiat currency |
+| **BTC Spot %** | Percentage of total wealth held as BTC spot |
 
-### Tips
+!!! tip "Tip about the first field"
+    This is your total wealth represented in bitcoin as a unit of account.
 
-- Use subcategories for more detailed analysis
-- Compare different months to see variations
-- Identify categories that grew significantly
+### Your All-Time High
 
-## All-Time High (ATH) 🏆
+Title: **Your all-time high**
 
-### What It Is
+| Label | Value |
+|--------|-------|
+| **All-time high** | Highest value your wealth has reached |
+| **Date** | Date the all-time high occurred |
+| **Current difference** | Percentage decline from the all-time high |
+| **Max drawdown** | Maximum drawdown percentage, when available |
+| **Max drawdown date** | Date of maximum drawdown, when available |
+| **BTC price to hit ATH** | BTC price needed to reach the all-time high again, when positive |
 
-The All-Time High shows the **highest value your wealth has ever reached** in Bitcoin terms.
+### Your Stack
 
-### What It Shows
+Title: **Your Stack**
 
-- ATH value in satoshis
-- Date when it occurred
-- Comparison with current value
-- Wealth evolution chart
+| Label | Value |
+|--------|-------|
+| **Current stack** | Current BTC stack |
+| **% of total supply** | Stack as a percentage of the 21,000,000 BTC supply |
+| **Global ranking** | Estimated maximum number of people who can have the same stack |
+| **Maximum stack** | Largest BTC stack ever recorded, when available |
+| **Max stack date** | Date of maximum stack, when available |
+| **Decline from max** | Percentage decline from maximum stack, when available |
 
-## Statistics 📈
+!!! tip "Tip about Global ranking"
+    Maximum number of people who can have the same stack as you.
 
-### What It Shows
+### Statistics
 
-Metrics calculated on your data:
+Title: **Statistics**
 
-| Metric | Description |
+| Label | Value |
+|--------|-------|
+| **Median expenses (12mo)** | Median monthly expenses over the last 12 months |
+| **Median expenses (prev 12mo)** | Median monthly expenses over the previous 12 months, when available |
+| **YoY evolution** | Year-over-year change in median fiat expenses, when available |
+| **Median sats (12mo)** | Median monthly expenses in satoshis, when available |
+| **Median sats (prev 12mo)** | Previous period median in satoshis, when available |
+| **Sats YoY evolution** | Year-over-year change in median sat-denominated expenses, when available |
+| **Wealth coverage** | How many months the current wealth covers expenses |
+
+!!! tip "Tip about Wealth coverage"
+    How long you can sustain yourself with your current wealth without new income.
+
+The panel has a gear icon that opens the configuration to exclude categories from the median expense calculation.
+
+### Indicators
+
+Title: **Indicators**
+
+| Label | Value |
+|--------|-------|
+| **Mayer Multiple** | Mayer Multiple of the BTC market |
+| **Rainbow Chart** | Current zone in the rainbow chart |
+| **Fear & Greed** | Crypto market fear and greed index |
+| **BTC Dominance** | BTC dominance percentage in the crypto market |
+
+Indicators may appear stale if the data has not been updated recently.
+
+### Simulated Prices
+
+Title: **Simulated Prices**
+
+Each row shows a configured scenario: the simulated BTC price and the projected total wealth in your main fiat currency. The panel has a gear icon that opens the configuration of up to 6 lines, each one either a **Percentage** or a **Fixed Price**.
+
+### Leverage Positions
+
+Title: **Leverage Positions**
+
+| Label | Value |
+|--------|-------|
+| **Leveraged Stack** | BTC spot plus effective BTC exposure from leveraged positions |
+| **Leverage Exposure** | Net BTC exposure from leveraged positions (positive for long, negative for short) |
+| **Leverage %** | Percentage of leveraged stack coming from leverage |
+| **Active Positions** | Number of active leveraged positions |
+| **Current result** | Total P&L in main fiat currency |
+| **Current result (BTC)** | Total P&L in BTC |
+| **BTC price to hit ATH** | BTC price needed to reach ATH with the leveraged stack, when available |
+
+### BTC Loans
+
+Title: **BTC Loans**
+
+| Label | Value |
+|--------|-------|
+| **Active loans** | Number of active loans |
+| **Total debt** | Total debt in main fiat currency |
+| **Total debt (BTC)** | Total debt in BTC |
+| **Total borrowed** | Total principal borrowed in main fiat currency |
+| **Avg LTV** | Debt-weighted average LTV |
+| **Avg APR** | Debt-weighted average APR |
+| **Total collateral** | Total collateral in BTC |
+| **Collateral (fiat)** | Total collateral in main fiat currency |
+| **% of stack pledged** | Collateral as a percentage of total BTC stack |
+| **Free BTC** | BTC stack not pledged as collateral |
+| **Loan health** | Count of healthy / warning / risk loans |
+| **Highest LTV** | Highest LTV among all loans |
+| **Closest to liq.** | Smallest LTV gap to liquidation |
+| **Worst-case liq. price** | Highest BTC price at which any loan would still be at risk |
+| **Accrued interest** | Total accrued interest in main fiat currency |
+| **Fees paid** | Total fees paid in main fiat currency |
+| **Avg loan age** | Average loan age in days |
+| **Next repayment** | Next repayment date and days until then, when available |
+
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Reports/ReportsView.axaml lines 163-219 + language.resx -->
+## Wealth Overview
+
+The **Wealth Overview** section shows a line chart of wealth over time.
+
+### Controls
+
+- **Period selector**: **Daily**, **Weekly**, **Monthly**, or **Yearly**.
+- **Max elements**: choose between **12**, **18**, or **24** data points on the chart.
+
+### Chart
+
+The line chart shows three series:
+
+- **Total Wealth** — total accumulated value.
+- **Bitcoin** — wealth denominated in BTC.
+- **Fiat** — wealth in main fiat currency.
+
+!!! note "Assets not included"
+    *doesn't include Assets* — the chart does not include the value of external assets registered in the **Assets** tab.
+
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Reports/ReportsView.axaml lines 221-377 + language.resx -->
+## Monthly Totals
+
+The **Monthly Totals** section combines a line chart and a detailed month-by-month table.
+
+### Controls
+
+- **Date selector**: choose **Year** or **All**.
+
+### Line chart
+
+Shows fiat and BTC wealth trends over the selected period.
+
+### Data table
+
+| Column | Description |
 |--------|-------------|
-| **Median Spending** | Typical monthly expense (less affected by outliers) |
-| **Average Spending** | Average monthly expense |
-| **Wealth Coverage** | How many months your assets cover |
-| **Savings Rate** | Percentage of income you save |
+| **Date** | Month/year of the row |
+| **Bitcoin** | Total in BTC |
+| **% from previous month** | Percentage change from previous month (BTC) |
+| **% from previous year** | Percentage change from previous year (BTC) |
+| **Total wealth** | Total wealth in main fiat currency |
+| **% from previous month** | Percentage change from previous month (fiat) |
+| **% from previous year** | Percentage change from previous year (fiat) |
+| **Total Income** | Total income in fiat (including conversions) |
+| **Total Expenses** | Total expenses in fiat (including conversions) |
+| **Income (Fiat)** | Income in fiat |
+| **Expenses (Fiat)** | Expenses in fiat |
+| **BTC Purchased** | BTC purchased in the month |
+| **BTC Sold** | BTC sold in the month |
+| **BTC Income** | Income in BTC |
+| **BTC Expenses** | Expenses in BTC |
 
-### Wealth Coverage
+!!! note "Notes"
+    *latest totals are calculated based on yesterday amounts*  
+    *doesn't include Assets*
 
-This indicator answers: "If I stopped earning money today, for how many months would my wealth sustain me?"
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Reports/ReportsView.axaml lines 379-526 + language.resx -->
+## By Categories
 
-**Calculation**: `Total Wealth ÷ Median Monthly Expenses`
+The **By categories** section shows two horizontal bar charts: one for **Expenses** and one for **Income**.
 
-**Example**:
-- Wealth: $50,000
-- Median expenses: $5,000/month
-- Coverage: 10 months
+### Controls
 
-After recording more than two years of transactions, Valt can show your personal inflation, with your current expenses from the last 12 months vs. the previous period. Valt will also show these expenses in sats, often demonstrating how fiat currency loses value while bitcoin preserves your purchasing power (unless you're in a sad bear market!).
+- **Date selector**: choose **Month**, **Year**, or **All**.
+- **Filters**: left panel with multi-selection of **Accounts** and **Categories**.
+- **Gear icon**: saves the current filter as default or loads the saved default filter.
+
+### Charts
+
+- **Expenses** — horizontal bars with the highest expense categories.
+- **Income** — horizontal bars with the highest income categories.
+
+Use the filters to include or exclude accounts and categories, and to focus on specific transaction groups.
 
 <!-- Source: ReportsView.axaml + ReportsViewModel.cs + CsvExportService.cs -->
 ## Export
 
 !!! note "No report export"
-    The Reports tab does not have an export feature. To export your transaction data, use **Export Transactions...** from the main menu.
+    The **Reports** tab does not have an export feature. To export your transaction data, use **Export Transactions...** from the main menu. You can also export average-price lines from the **Average Prices** tab.
 
+<!-- Source: ReportsView.axaml + language.resx -->
 ## Usage Tips 💡
 
-### Monthly Analysis
+### Monthly review
 
 Do a monthly review of your reports:
-1. Check monthly totals
-2. Analyze categories
-3. Compare with previous months
-4. Identify deviations
 
-### Set Goals
+1. Check the **Summary** panels.
+2. Analyze the **Wealth Overview**.
+3. Look at **Monthly Totals** and compare with previous months.
+4. Use **By Categories** to identify deviations in spending and income.
 
-Use reports to define and track goals:
-- Maximum spending goal per category
-- Savings rate goal
-- Wealth coverage goal
+### Use price simulation for planning
 
-### View in Bitcoin
+Test different BTC prices to see how your wealth, stack, and leveraged positions react. This helps plan upside and downside scenarios without changing real data.
+
+### View in satoshis
 
 Observing everything in satoshis gives a different perspective:
-- Expenses seem larger (opportunity cost)
-- Motivation to save
-- Long-term vision
+
+- Expenses seem larger (opportunity cost).
+- Motivation to save increases.
+- Long-term vision strengthens.
+
+### Secure Mode
+
+When **Secure Mode** is enabled, all data on the Reports tab is hidden. Leave Secure Mode to view the charts and panels.
 
 ## Next Steps
 
