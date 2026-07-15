@@ -196,6 +196,37 @@ A lista contém as colunas:
 <!-- Source: src/Valt.Core/Modules/Assets/Asset.cs UndoSale -->
 Para restaurar um ativo vendido à visualização ativa, selecione-o na lista e clique em **Restaurar Ativo**. O ativo volta à lista ativa com o estado de visibilidade que tinha antes de ser marcado como vendido.
 
+## Empréstimos com Garantia em BTC 🪙
+
+<!-- Source: src/Valt.Core/Modules/Assets/Details/BtcLoanDetails.cs -->
+O tipo **Empréstimo BTC** representa um empréstimo de fiat (como USD ou BRL) garantido por BTC. Os campos principais são:
+
+| Campo | Significado |
+|-------|-------------|
+| **Colateral** | Quantidade de BTC travada como garantia (em satoshis) |
+| **Valor do Empréstimo** | Quanto fiat foi tomado |
+| **APR** | Taxa anual de juros (ex: 0,12 = 12%) |
+| **LTV Inicial** | Proporção dívida/garantia no momento do empréstimo |
+| **LTV de Margin Call** | Limite que dispara um alerta de risco |
+| **LTV de Liquidação** | Limite que aciona a liquidação da garantia |
+
+<!-- Source: src/Valt.Core/Modules/Assets/Details/BtcLoanDetails.cs + LoanStateSnapshot.cs -->
+Cada empréstimo pode ter uma linha do tempo de **snapshots** de estado. Cada snapshot registra a dívida total, o colateral, o APR, as taxas e a data efetiva. Os cálculos atuais sempre usam o snapshot mais recente; se ele for excluído, o Valt usa o snapshot anterior ou, se não houver mais nenhum, retorna aos valores imutáveis de configuração originais.
+
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Assets/AssetsView.axaml -->
+A partir da aba **Ativos**, você pode abrir **Atualizar Estado do Empréstimo** para adicionar um novo snapshot e **Histórico do Estado do Empréstimo** para visualizar a linha do tempo completa.
+
+## Grupos de Ativos 🗂️
+
+<!-- Source: src/Valt.Core/Modules/Assets/AssetGroup.cs + src/Valt.Core/Modules/Assets/Asset.cs AssignToGroup -->
+Os ativos podem ser organizados em grupos para facilitar a navegação na aba **Ativos**. Para gerenciar grupos, clique no botão **Gerenciar Grupos** na barra de ferramentas e use o modal **Gerenciar Grupos de Ativos** para criar, renomear, excluir e reordenar grupos.
+
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Assets/AssetsView.axaml -->
+Para mover um ativo para um grupo, clique com o botão direito sobre ele e escolha **Mover para o Grupo**. Para remover um ativo de um grupo, use **Remover do Grupo**. Ativos sem grupo aparecem após os grupos.
+
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Assets/AssetsView.axaml + AssetGroup.cs -->
+Os grupos afetam apenas a organização visual e a navegação na tela de Ativos. Eles não alteram os totais, o patrimônio líquido ou qualquer cálculo financeiro.
+
 ## Patrimônio e Valor Líquido 💎
 
 ### Como os Ativos Integram ao Patrimônio

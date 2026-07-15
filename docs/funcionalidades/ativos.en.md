@@ -196,6 +196,37 @@ The list contains the columns:
 <!-- Source: src/Valt.Core/Modules/Assets/Asset.cs UndoSale -->
 To restore a sold asset to the active view, select it in the list and click **Restore Asset**. The asset returns to the active list with the visibility state it had before being marked as sold.
 
+## BTC-Backed Loans 🪙
+
+<!-- Source: src/Valt.Core/Modules/Assets/Details/BtcLoanDetails.cs -->
+The **BTC Loan** asset type represents a fiat loan (such as USD or BRL) backed by BTC collateral. The main fields are:
+
+| Field | Meaning |
+|-------|---------|
+| **Collateral** | Amount of BTC locked as collateral (in satoshis) |
+| **Loan Amount** | How much fiat was borrowed |
+| **APR** | Annual interest rate (e.g., 0.12 = 12%) |
+| **Initial LTV** | Debt-to-collateral ratio at loan origination |
+| **Margin Call LTV** | Threshold that triggers a risk warning |
+| **Liquidation LTV** | Threshold that triggers liquidation of collateral |
+
+<!-- Source: src/Valt.Core/Modules/Assets/Details/BtcLoanDetails.cs + LoanStateSnapshot.cs -->
+Each loan can have a timeline of **state snapshots**. Each snapshot records the total debt, collateral, APR, fees, and effective date. Current calculations always use the latest snapshot; if it is deleted, Valt falls back to the previous snapshot, or to the original immutable setup values when no snapshots remain.
+
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Assets/AssetsView.axaml -->
+From the **Assets** tab, you can open **Update Loan State** to add a new snapshot and **Loan State History** to view the full timeline.
+
+## Asset Groups 🗂️
+
+<!-- Source: src/Valt.Core/Modules/Assets/AssetGroup.cs + src/Valt.Core/Modules/Assets/Asset.cs AssignToGroup -->
+Assets can be organized into groups to make navigation in the **Assets** tab easier. To manage groups, click the **Manage Groups** button on the toolbar and use the **Manage Asset Groups** modal to create, rename, delete, and reorder groups.
+
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Assets/AssetsView.axaml -->
+To move an asset into a group, right-click it and choose **Move to Group**. To remove an asset from a group, use **Remove from Group**. Ungrouped assets appear after the groups.
+
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Assets/AssetsView.axaml + AssetGroup.cs -->
+Groups only affect visual organization and navigation on the Assets screen. They do not change totals, net worth, or any financial calculations.
+
 ## Wealth and Net Worth 💎
 
 ### How Assets Integrate into Wealth
