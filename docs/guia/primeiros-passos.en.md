@@ -2,13 +2,15 @@
 
 This guide will help you set up Valt and start managing your finances in just a few minutes.
 
+<!-- Source: src/Valt.UI/Views/MainViewTabNames.cs + MainView.axaml + language.resx -->
 ## Interface Overview 🖥️
 
-When you open Valt, you'll see three main tabs at the top:
+When you open Valt, you'll see four main tabs at the top:
 
 1. **Transactions** - Where you manage accounts and record transactions
 2. **Reports** - Charts and analysis of your data
-3. **Average Price** - Bitcoin acquisition cost calculation
+3. **Average Prices** - Bitcoin acquisition cost calculation
+4. **Assets** - External investments and wealth items
 
 ## Step 1: Create Your Accounts 🏦
 

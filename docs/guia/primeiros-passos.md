@@ -2,13 +2,15 @@
 
 Este guia vai ajudá-lo a configurar o Valt e começar a gerenciar suas finanças em poucos minutos.
 
+<!-- Source: src/Valt.UI/Views/MainViewTabNames.cs + MainView.axaml + language.pt-BR.resx -->
 ## Visão Geral da Interface 🖥️
 
-Ao abrir o Valt, você verá três abas principais na parte superior:
+Ao abrir o Valt, você verá quatro abas principais na parte superior:
 
 1. **Transações** - Onde você gerencia contas e lança transações
 2. **Relatórios** - Gráficos e análises dos seus dados
-3. **Preço Médio** - Cálculo de custo de aquisição de Bitcoin
+3. **Preço-médio** - Cálculo de custo de aquisição de Bitcoin
+4. **Ativos** - Investimentos e bens externos
 
 ## Passo 1: Criar Suas Contas 🏦
 

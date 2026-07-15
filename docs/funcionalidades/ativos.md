@@ -4,24 +4,27 @@ O módulo de Ativos permite que você registre investimentos e bens externos ao 
 
 ## Visão Geral
 
-O módulo de Ativos foi criado para quem deseja enxergar seu patrimônio completo em um só lugar. Você pode cadastrar ações, ETFs, criptomoedas, imóveis, commodities, posições alavancadas e ativos personalizados.
+<!-- Source: src/Valt.Core/Modules/Assets/AssetTypes.cs + language.pt-BR.resx -->
+O módulo de Ativos foi criado para quem deseja enxergar seu patrimônio completo em um só lugar. Você pode cadastrar ações, ETFs, criptomoedas, imóveis, commodities, posições alavancadas, ativos personalizados, empréstimos BTC e posições de empréstimo BTC (credor).
 
 !!! info "O que o módulo NÃO é"
     O módulo de Ativos **não é um rastreador de preços em tempo real**. Ele serve para registrar o que você possui e ter uma visão consolidada do seu patrimônio. A atualização de preços pode ser feita manualmente ou por fontes configuráveis, mas não há monitoramento contínuo de variações de mercado.
 
 ## Tipos de Ativo 📋
 
-O Valt suporta 7 tipos de ativo:
+O Valt suporta 9 tipos de ativo:
 
 | Tipo | Descrição | Exemplo |
 |------|-----------|---------|
-| **Ações** | Ações de empresas listadas em bolsa | PETR4, VALE3, AAPL |
-| **ETFs** | Fundos de índice negociados em bolsa | IVVB11, BOVA11, VOO |
-| **Criptomoedas** | Moedas digitais além do Bitcoin | ETH, SOL, ADA |
-| **Imóveis** | Propriedades e bens imobiliários | Apartamento, terreno |
-| **Commodities** | Matérias-primas e metais preciosos | Ouro, prata |
-| **Posições Alavancadas** | Operações com alavancagem | Futuros, margem |
+| **Ação** | Ações de empresas listadas em bolsa | PETR4, VALE3, AAPL |
+| **ETF** | Fundos de índice negociados em bolsa | IVVB11, BOVA11, VOO |
+| **Criptomoeda** | Moedas digitais além do Bitcoin | ETH, SOL, ADA |
+| **Imóvel** | Propriedades e bens imobiliários | Apartamento, terreno |
+| **Commodity** | Matérias-primas e metais preciosos | Ouro, prata |
+| **Posição Alavancada** | Operações com alavancagem | Futuros, margem |
 | **Personalizado** | Qualquer outro tipo de ativo | Veículos, arte, coleções |
+| **Empréstimo BTC** | Empréstimo com colateral em BTC | Tomar fiat com garantia em BTC |
+| **Empréstimo BTC (Credor)** | Posição de empréstimo BTC/fiat | Emprestar BTC ou fiat |
 
 ## Criando um Ativo ➕
 

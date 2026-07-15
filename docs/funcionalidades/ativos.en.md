@@ -4,24 +4,27 @@ The Assets module lets you register external investments and wealth items in Val
 
 ## Overview
 
-The Assets module was designed for those who want to see their complete wealth in one place. You can register stocks, ETFs, cryptocurrencies, real estate, commodities, leveraged positions, and custom assets.
+<!-- Source: src/Valt.Core/Modules/Assets/AssetTypes.cs + language.resx -->
+The Assets module was designed for those who want to see their complete wealth in one place. You can register stocks, ETFs, cryptocurrencies, real estate, commodities, leveraged positions, custom assets, BTC loans, and BTC lending positions.
 
 !!! info "What the module is NOT"
     The Assets module **is not a real-time price tracker**. It serves to register what you own and have a consolidated view of your wealth. Price updates can be done manually or through configurable sources, but there is no continuous monitoring of market movements.
 
 ## Asset Types 📋
 
-Valt supports 7 asset types:
+Valt supports 9 asset types:
 
 | Type | Description | Example |
 |------|-------------|---------|
-| **Stocks** | Shares of publicly listed companies | AAPL, MSFT, GOOGL |
-| **ETFs** | Exchange-traded index funds | VOO, QQQ, SPY |
-| **Cryptocurrencies** | Digital currencies beyond Bitcoin | ETH, SOL, ADA |
+| **Stock** | Shares of publicly listed companies | AAPL, MSFT, GOOGL |
+| **ETF** | Exchange-traded index funds | VOO, QQQ, SPY |
+| **Cryptocurrency** | Digital currencies beyond Bitcoin | ETH, SOL, ADA |
 | **Real Estate** | Properties and real estate assets | Apartment, land |
-| **Commodities** | Raw materials and precious metals | Gold, silver |
-| **Leveraged Positions** | Operations with leverage | Futures, margin |
+| **Commodity** | Raw materials and precious metals | Gold, silver |
+| **Leveraged Position** | Operations with leverage | Futures, margin |
 | **Custom** | Any other type of asset | Vehicles, art, collections |
+| **BTC Loan** | BTC-collateralized loan | Borrow fiat against BTC |
+| **BTC Lending** | BTC/fiat lending position | Lend BTC or fiat |
 
 ## Creating an Asset ➕
 
