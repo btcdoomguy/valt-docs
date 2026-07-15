@@ -161,23 +161,40 @@ To delete an asset:
 2. Click **Delete**
 3. Confirm the deletion
 
-## Selling an Asset 💸
+## Marking an Asset as Sold 🏷️
 
-When you sell an asset fully or partially:
+<!-- Source: src/Valt.Core/Modules/Assets/Asset.cs MarkAsSold -->
+When you mark an asset as sold, Valt hides it from the active view and moves it to the sold asset history. To do this:
 
-1. Click on the asset you want to sell
-2. Select the **Sell** option
-3. Fill in the fields:
+1. Right-click the asset you want to mark.
+2. Select **Mark as Sold**.
+3. Optionally, enter the **Date Sold**. If no date is provided, Valt uses today's date.
 
-| Field | Description |
-|-------|-------------|
-| **Quantity** | How many units you are selling |
-| **Sell Price** | Price per unit at sale |
-| **Date** | Date of the operation |
+<!-- Source: src/Valt.Core/Modules/Assets/Asset.cs MarkAsSold -->
+After marking as sold, the asset disappears from the active asset list and is excluded from totals and net worth calculations. The previous visibility state is preserved so the asset can be restored later.
 
-4. Click **Confirm**
+!!! warning "Attention"
+    Marking an asset as sold **does not record a sale transaction or calculate profit or loss**. This action only hides the asset from the active view and moves it to **History**. If you want to record the proceeds, you can create a manual transaction in your accounts.
 
-Valt will automatically calculate the profit or loss of the operation based on the registered purchase price.
+<!-- Source: src/Valt.UI/Views/Main/Modals/SoldAssetHistory/SoldAssetHistoryView.axaml -->
+## Sold Asset History 📜
+
+To view assets marked as sold:
+
+1. In the **Assets** tab, click the **History** button on the toolbar.
+2. The **Sold Asset History** modal opens with a list of sold assets.
+
+<!-- Source: src/Valt.UI/Views/Main/Modals/SoldAssetHistory/SoldAssetHistoryView.axaml -->
+The list contains the columns:
+
+| Column | Description |
+|--------|-------------|
+| **Name** | Asset name |
+| **Type** | Asset type |
+| **Date Sold** | Date the asset was marked as sold |
+
+<!-- Source: src/Valt.Core/Modules/Assets/Asset.cs UndoSale -->
+To restore a sold asset to the active view, select it in the list and click **Restore Asset**. The asset returns to the active list with the visibility state it had before being marked as sold.
 
 ## Wealth and Net Worth 💎
 

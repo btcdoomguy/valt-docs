@@ -161,23 +161,40 @@ Para excluir um ativo:
 2. Clique em **Excluir**
 3. Confirme a exclusão
 
-## Vendendo um Ativo 💸
+## Marcando um Ativo como Vendido 🏷️
 
-Quando você vende total ou parcialmente um ativo:
+<!-- Source: src/Valt.Core/Modules/Assets/Asset.cs MarkAsSold -->
+Quando você marca um ativo como vendido, o Valt oculta o ativo da visualização ativa e o move para o histórico de ativos vendidos. Para fazer isso:
 
-1. Clique no ativo que deseja vender
-2. Selecione a opção **Vender**
-3. Preencha os campos:
+1. Clique com o botão direito no ativo que deseja marcar.
+2. Selecione a opção **Marcar como Vendido**.
+3. Se desejar, informe a **Data da Venda**. Se nenhuma data for fornecida, o Valt usa a data atual.
 
-| Campo | Descrição |
-|-------|-----------|
-| **Quantidade** | Quantas unidades está vendendo |
-| **Preço de Venda** | Preço por unidade na venda |
-| **Data** | Data da operação |
+<!-- Source: src/Valt.Core/Modules/Assets/Asset.cs MarkAsSold -->
+Após marcar como vendido, o ativo desaparece da lista ativa de ativos e é excluído dos totais e cálculos de patrimônio. O estado de visibilidade anterior é preservado, para que o ativo possa ser restaurado depois.
 
-4. Clique em **Confirmar**
+!!! warning "Atenção"
+    Marcar um ativo como vendido **não registra uma transação de venda nem calcula lucro ou prejuízo**. Essa ação apenas oculta o ativo da visualização ativa e o move para o **Histórico**. Se você quiser registrar o valor recebido, poderá criar uma transação manual nas contas.
 
-O Valt calculará automaticamente o lucro ou prejuízo da operação com base no preço de compra registrado.
+<!-- Source: src/Valt.UI/Views/Main/Modals/SoldAssetHistory/SoldAssetHistoryView.axaml -->
+## Histórico de Ativos Vendidos 📜
+
+Para visualizar os ativos marcados como vendidos:
+
+1. Na aba **Ativos**, clique no botão **Histórico** na barra de ferramentas.
+2. O modal **Histórico de Ativos Vendidos** será exibido com uma lista de ativos vendidos.
+
+<!-- Source: src/Valt.UI/Views/Main/Modals/SoldAssetHistory/SoldAssetHistoryView.axaml -->
+A lista contém as colunas:
+
+| Coluna | Descrição |
+|--------|-----------|
+| **Nome** | Nome do ativo |
+| **Tipo** | Tipo do ativo |
+| **Data da Venda** | Data em que o ativo foi marcado como vendido |
+
+<!-- Source: src/Valt.Core/Modules/Assets/Asset.cs UndoSale -->
+Para restaurar um ativo vendido à visualização ativa, selecione-o na lista e clique em **Restaurar Ativo**. O ativo volta à lista ativa com o estado de visibilidade que tinha antes de ser marcado como vendido.
 
 ## Patrimônio e Valor Líquido 💎
 
