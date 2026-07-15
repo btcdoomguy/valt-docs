@@ -2,14 +2,10 @@
 
 The Reports tab offers graphical visualizations and analysis of your financial data, helping you understand spending patterns and track the evolution of your wealth.
 
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Reports/ReportsView.axaml + ReportsViewModel.cs -->
 ## Overview
 
-Valt's reports include:
-
-- **Monthly Totals**: Income and expenses month by month
-- **Spending by Category**: Expense distribution
-- **All-Time High**: Peak of wealth in Bitcoin
-- **Statistics**: Metrics and indicators
+The Reports tab provides summary dashboards and detailed analyses of your financial data, including wealth overview, monthly totals, spending by category, all-time high, statistics, simulated prices, indicators, leveraged positions, and BTC loans.
 
 ## Monthly Totals 📅
 
@@ -109,10 +105,11 @@ This indicator answers: "If I stopped earning money today, for how many months w
 
 After recording more than two years of transactions, Valt can show your personal inflation, with your current expenses from the last 12 months vs. the previous period. Valt will also show these expenses in sats, often demonstrating how fiat currency loses value while bitcoin preserves your purchasing power (unless you're in a sad bear market!).
 
+<!-- Source: ReportsView.axaml + ReportsViewModel.cs + CsvExportService.cs -->
 ## Export
 
-!!! note "In development"
-    Report export may be available in future versions.
+!!! note "No report export"
+    The Reports tab does not have an export feature. To export your transaction data, use **Export Transactions...** from the main menu.
 
 ## Usage Tips 💡
 

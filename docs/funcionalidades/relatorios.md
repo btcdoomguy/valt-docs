@@ -2,14 +2,10 @@
 
 A aba de Relatórios oferece visualizações gráficas e análises dos seus dados financeiros, ajudando você a entender padrões de gastos e acompanhar a evolução do seu patrimônio.
 
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Reports/ReportsView.axaml + ReportsViewModel.cs -->
 ## Visão Geral
 
-Os relatórios do Valt incluem:
-
-- **Totais Mensais**: Receitas e despesas mês a mês
-- **Gastos por Categoria**: Distribuição de despesas
-- **All-Time High**: Pico do patrimônio em Bitcoin
-- **Estatísticas**: Métricas e indicadores
+A aba de Relatórios apresenta dashboards resumidos e análises detalhadas dos seus dados financeiros, incluindo visão geral do patrimônio, totais mensais, gastos por categoria, all-time high, estatísticas, simulação de preços, indicadores, posições alavancadas e empréstimos BTC.
 
 ## Totais Mensais 📅
 
@@ -109,10 +105,11 @@ Este indicador responde: "Se eu parasse de ganhar dinheiro hoje, por quantos mes
 
 Após registrar mais de dois anos de transações, VALT consegue demonstrar a sua inflação particular, com os seus gastos atuais dos 12 meses vs o período anterior. VALT também irá demonstrar esses gastos em sats, muitas vezes demonstrando como a moeda fiat vai perdendo o valor enquanto o bitcoin preserva seu poder de compra (a não ser que você esteja em um triste bear market!).
 
+<!-- Source: ReportsView.axaml + ReportsViewModel.cs + CsvExportService.cs -->
 ## Exportação
 
-!!! note "Em desenvolvimento"
-    A exportação de relatórios pode estar disponível em versões futuras.
+!!! note "Sem exportação de relatórios"
+    A aba Relatórios não possui funcionalidade de exportação. Para exportar seus dados de transações, use **Exportar Transações...** no menu principal.
 
 ## Dicas de Uso 💡
 
