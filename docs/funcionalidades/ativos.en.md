@@ -174,7 +174,7 @@ When you mark an asset as sold, Valt hides it from the active view and moves it 
 After marking as sold, the asset disappears from the active asset list and is excluded from totals and net worth calculations. The previous visibility state is preserved so the asset can be restored later.
 
 !!! warning "Attention"
-    Marking an asset as sold **does not record a sale transaction or calculate profit or loss**. This action only hides the asset from the active view and moves it to **History**. If you want to record the proceeds, you can create a manual transaction in your accounts.
+    Marking an asset as sold **does not record a sale transaction or calculate profit or loss**. This action only hides the asset from the active view and moves it to **History**. After confirming, Valt may offer the **Record proceeds?** prompt to create a matching transaction in your accounts. This is optional and does not change the asset's sold state.
 
 <!-- Source: src/Valt.UI/Views/Main/Modals/SoldAssetHistory/SoldAssetHistoryView.axaml -->
 ## Sold Asset History 📜

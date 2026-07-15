@@ -174,7 +174,7 @@ Quando você marca um ativo como vendido, o Valt oculta o ativo da visualizaçã
 Após marcar como vendido, o ativo desaparece da lista ativa de ativos e é excluído dos totais e cálculos de patrimônio. O estado de visibilidade anterior é preservado, para que o ativo possa ser restaurado depois.
 
 !!! warning "Atenção"
-    Marcar um ativo como vendido **não registra uma transação de venda nem calcula lucro ou prejuízo**. Essa ação apenas oculta o ativo da visualização ativa e o move para o **Histórico**. Se você quiser registrar o valor recebido, poderá criar uma transação manual nas contas.
+    Marcar um ativo como vendido **não registra uma transação de venda nem calcula lucro ou prejuízo**. Essa ação apenas oculta o ativo da visualização ativa e o move para o **Histórico**. Após confirmar, o Valt pode oferecer a opção **Registrar receita?** para criar uma transação correspondente nas contas. Isso é opcional e não altera o estado de vendido do ativo.
 
 <!-- Source: src/Valt.UI/Views/Main/Modals/SoldAssetHistory/SoldAssetHistoryView.axaml -->
 ## Histórico de Ativos Vendidos 📜
