@@ -224,6 +224,109 @@ O servidor MCP do Valt expõe mais de 45 ferramentas organizadas por categoria.
 | `GetHistoricalPrice` | Preço histórico |
 | `ConvertCurrency` | Converte valores entre moedas |
 
+### Ativos (AssetTools)
+
+<!-- Source: src/Valt.Infra/Mcp/Tools/AssetTools.cs -->
+Ferramentas para gerenciar **ativos** — investimentos externos rastreados separadamente das contas (ações, ETFs, criptomoedas, imóveis, posições alavancadas, empréstimos BTC e mais).
+
+#### Operações de Ativos
+
+| Ferramenta | Descrição |
+|------------|-----------|
+| `GetAssets` | Lista todos os ativos rastreados |
+| `GetVisibleAssets` | Lista apenas os ativos visíveis |
+| `GetAsset` | Obtém um ativo pelo seu ID |
+| `GetAssetsSummary` | Resumo dos ativos com totais na moeda principal e em sats, incluindo ativos vs passivos |
+| `CreateBasicAsset` | Cria um ativo básico (ação, ETF, cripto, commodity ou personalizado) |
+| `CreateRealEstateAsset` | Cria um ativo imobiliário |
+| `CreateLeveragedPosition` | Cria uma posição alavancada (futuros, perpétuos, margem) |
+| `UpdateAssetPrice` | Atualiza o preço atual de um ativo |
+| `UpdateAssetQuantity` | Atualiza a quantidade de um ativo básico |
+| `ToggleAssetVisibility` | Alterna a visibilidade de um ativo |
+| `ToggleAssetNetWorthInclusion` | Alterna a inclusão do ativo no cálculo de patrimônio líquido |
+| `DeleteAsset` | Remove um ativo |
+
+#### Empréstimos BTC
+
+| Ferramenta | Descrição |
+|------------|-----------|
+| `CreateBtcLoan` | Cria um empréstimo com garantia em BTC, com LTV, saúde e juros; suporta APR diário ou dívida total fixa (estilo HodlHodl) |
+| `CreateBtcLending` | Cria uma posição de empréstimo BTC/fiat (credor), com acompanhamento de juros |
+| `RepayLoan` | Marca um empréstimo BTC ou posição de credor como quitado |
+
+#### Grupos de Ativos
+
+| Ferramenta | Descrição |
+|------------|-----------|
+| `GetAssetGroups` | Lista todos os grupos de ativos |
+| `CreateAssetGroup` | Cria um grupo de ativos |
+| `UpdateAssetGroup` | Atualiza o nome e a descrição de um grupo |
+| `DeleteAssetGroup` | Remove um grupo; os ativos do grupo ficam sem grupo |
+| `MoveAssetToGroup` | Move um ativo para um grupo |
+| `RemoveAssetFromGroup` | Remove um ativo do seu grupo |
+
+#### Linha do Tempo do Estado do Empréstimo
+
+Cada empréstimo com garantia em BTC mantém uma linha do tempo de **snapshots** de estado; os cálculos atuais sempre usam o snapshot mais recente.
+
+| Ferramenta | Descrição |
+|------------|-----------|
+| `AddLoanStateUpdate` | Adiciona um novo snapshot de estado a um empréstimo com garantia em BTC |
+| `DeleteLoanStateUpdate` | Remove um snapshot de estado pela data efetiva |
+| `GetLoanStateTimeline` | Retorna a linha do tempo cronológica completa de snapshots do empréstimo |
+| `GetLatestLoanState` | Retorna o estado mais recente registrado do empréstimo |
+
+**Parâmetros de `AddLoanStateUpdate`:**
+
+| Parâmetro | Descrição |
+|-----------|-----------|
+| `assetId` | O ID do ativo |
+| `effectiveDate` | Data efetiva (yyyy-MM-dd) |
+| `totalBorrowed` | Principal tomado ainda devido na data do snapshot |
+| `interestAccruedUntilDate` | Juros acumulados até a data do snapshot |
+| `collateralSats` | Colateral em BTC, em satoshis |
+| `apr` | APR como decimal (ex.: 0,12 para 12%) |
+| `fees` | Taxas pagas |
+| `note` | Observação (opcional) |
+
+**Parâmetros de `DeleteLoanStateUpdate`:**
+
+| Parâmetro | Descrição |
+|-----------|-----------|
+| `assetId` | O ID do ativo |
+| `effectiveDate` | Data efetiva do snapshot a remover (yyyy-MM-dd) |
+
+**Parâmetros de `GetLoanStateTimeline` e `GetLatestLoanState`:**
+
+| Parâmetro | Descrição |
+|-----------|-----------|
+| `assetId` | O ID do ativo |
+
+#### Ativos Vendidos
+
+Marcar um ativo como vendido oculta o ativo da lista ativa e o move para o histórico, preservando o estado de visibilidade anterior para eventual restauração.
+
+| Ferramenta | Descrição |
+|------------|-----------|
+| `MarkAssetAsSold` | Marca um ativo como vendido na data informada (padrão: hoje) |
+| `UndoAssetSale` | Reverte uma venda e restaura o ativo à lista ativa |
+| `ListSoldAssets` | Lista todos os ativos marcados como vendidos |
+
+**Parâmetros de `MarkAssetAsSold`:**
+
+| Parâmetro | Descrição |
+|-----------|-----------|
+| `assetId` | O ID do ativo a marcar como vendido |
+| `dateSold` | Data da venda em yyyy-MM-dd (opcional, padrão: hoje) |
+
+**Parâmetros de `UndoAssetSale`:**
+
+| Parâmetro | Descrição |
+|-----------|-----------|
+| `assetId` | O ID do ativo vendido a restaurar |
+
+`ListSoldAssets` não recebe parâmetros.
+
 ## Casos de Uso 💡
 
 ### Consultando Dados
