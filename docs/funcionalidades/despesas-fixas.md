@@ -144,6 +144,16 @@ Se você quiser temporariamente parar de ver uma despesa fixa (ex: cancelou Netf
 
 Ela não aparecerá na lista principal, mas o histórico é mantido.
 
+## Visão Geral Anual
+
+<!-- Source: src/Valt.UI/Views/Main/Modals/FixedExpenseOverview/FixedExpenseOverviewView.axaml + FixedExpenseOverviewViewModel.cs + src/Valt.UI/Views/Main/Tabs/Transactions/FixedExpensesPanelView.axaml + src/Valt.UI/Lang/language.pt-BR.resx -->
+A tela de visão geral anual é aberta pelo ícone de calendário no cabeçalho do painel de Despesas Fixas, na aba **Transações**. Ela exibe uma grade com os 12 meses do ano selecionado, mostrando, para cada despesa, o valor esperado, o valor real e o status da ocorrência. O seletor de ano permite alternar entre os anos disponíveis, e os totais de **Total Pago** e **Despesas Futuras** são exibidos no rodapé.
+
+### Detecção de valores fora da faixa
+
+<!-- Source: src/Valt.UI/Views/Main/Modals/FixedExpenseOverview/FixedExpenseOverviewViewModel.cs IsAmountOutOfRange -->
+Quando uma despesa fixa tem um valor fixo, o sistema sinaliza a ocorrência se o valor pago for diferente do esperado. Para despesas com valor variável, a ocorrência é sinalizada quando o valor pago estiver fora da faixa mínimo–máximo esperada.
+
 ## Relatório de Despesas Fixas 📊
 
 O Valt irá gerar automaticamente um resumo das suas despesas fixas:
