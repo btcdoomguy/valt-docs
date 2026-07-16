@@ -1,6 +1,6 @@
 # MCP Server 🤖
 
-Valt includes a built-in MCP (Model Context Protocol) server that enables natural language interaction with your finances through AI models. With over 45 tools available, you can query data, create transactions, manage accounts, and more - all through conversations with your favorite AI.
+Valt includes a built-in MCP (Model Context Protocol) server that enables natural language interaction with your finances through AI models. With over 80 tools available, you can query data, create transactions, manage accounts, and more - all through conversations with your favorite AI.
 
 ## What is MCP 🔗
 
@@ -130,7 +130,7 @@ http://localhost:5200/mcp
 
 ## Available Tools 🛠️
 
-Valt's MCP server exposes over 45 tools organized by category.
+Valt's MCP server exposes over 80 tools organized by category.
 
 ### Accounts (AccountTools)
 
@@ -223,6 +223,118 @@ Valt's MCP server exposes over 45 tools organized by category.
 | `GetExchangeRate` | Current exchange rate |
 | `GetHistoricalPrice` | Historical price |
 | `ConvertCurrency` | Converts values between currencies |
+
+### Assets (AssetTools)
+
+<!-- Source: src/Valt.Infra/Mcp/Tools/AssetTools.cs -->
+Tools to manage **assets** — external investments tracked separately from accounts (stocks, ETFs, crypto, real estate, leveraged positions, BTC loans, and more).
+
+#### Asset Operations
+
+| Tool | Description |
+|------|-------------|
+| `GetAssets` | Lists all tracked assets |
+| `GetVisibleAssets` | Lists only visible assets |
+| `GetAsset` | Gets a single asset by its ID |
+| `GetAssetsSummary` | Asset summary with totals in main currency and sats, including assets vs liabilities breakdown |
+| `CreateBasicAsset` | Creates a basic asset (stock, ETF, crypto, commodity, or custom) |
+| `CreateRealEstateAsset` | Creates a real estate asset |
+| `CreateLeveragedPosition` | Creates a leveraged position (futures, perpetuals, margin) |
+| `UpdateAssetPrice` | Updates the current price of an asset |
+| `UpdateAssetQuantity` | Updates the quantity of a basic asset |
+| `ToggleAssetVisibility` | Toggles the visibility of an asset |
+| `ToggleAssetNetWorthInclusion` | Toggles whether the asset is included in the net worth calculation |
+| `DeleteAsset` | Removes an asset |
+
+#### BTC Loans
+
+| Tool | Description |
+|------|-------------|
+| `CreateBtcLoan` | Creates a BTC-collateralized loan (borrowing fiat against BTC collateral); tracks LTV, health status, and accrued interest; supports daily APR or a fixed total debt (HodlHodl-style) |
+| `CreateBtcLending` | Creates a lending position (lending fiat/BTC to a borrower or platform); tracks earned interest |
+| `RepayLoan` | Marks a BTC loan or lending position as repaid |
+
+#### Asset Groups
+
+| Tool | Description |
+|------|-------------|
+| `GetAssetGroups` | Lists all asset groups |
+| `CreateAssetGroup` | Creates an asset group |
+| `UpdateAssetGroup` | Updates an asset group name and description |
+| `DeleteAssetGroup` | Removes an asset group; assets in the group become ungrouped |
+| `MoveAssetToGroup` | Moves an asset to a group |
+| `RemoveAssetFromGroup` | Removes an asset from its group |
+
+#### Loan State Timeline
+
+Each BTC-collateralized loan keeps a timeline of state **snapshots**; current calculations always use the latest snapshot.
+
+| Tool | Description |
+|------|-------------|
+| `AddLoanStateUpdate` | Adds a new state snapshot to a BTC-collateralized loan |
+| `DeleteLoanStateUpdate` | Deletes a state snapshot by its effective date |
+| `GetLoanStateTimeline` | Gets the full chronological snapshot timeline of the loan |
+| `GetLatestLoanState` | Gets the latest recorded state of the loan |
+
+**Parameters of `AddLoanStateUpdate`:**
+
+| Parameter | Description |
+|-----------|-------------|
+| `assetId` | The asset ID |
+| `effectiveDate` | Effective date (yyyy-MM-dd) |
+| `totalBorrowed` | Borrowed principal still owed at the snapshot date |
+| `interestAccruedUntilDate` | Interest accrued up to the snapshot date |
+| `collateralSats` | BTC collateral in satoshis |
+| `apr` | APR as decimal (e.g., 0.12 for 12%) |
+| `fees` | Fees paid |
+| `note` | Optional note |
+
+**Parameters of `DeleteLoanStateUpdate`:**
+
+| Parameter | Description |
+|-----------|-------------|
+| `assetId` | The asset ID |
+| `effectiveDate` | Effective date of the snapshot to delete (yyyy-MM-dd) |
+
+**Parameters of `GetLoanStateTimeline` and `GetLatestLoanState`:**
+
+| Parameter | Description |
+|-----------|-------------|
+| `assetId` | The asset ID |
+
+#### Sold Assets
+
+Marking an asset as sold hides the asset from the active list and moves it to the history, preserving the previous visibility state for later restoration.
+
+| Tool | Description |
+|------|-------------|
+| `MarkAssetAsSold` | Marks an asset as sold on the given date (defaults to today) |
+| `UndoAssetSale` | Reverts a previous sale and restores the asset to the active list |
+| `ListSoldAssets` | Lists all assets marked as sold |
+
+**Parameters of `MarkAssetAsSold`:**
+
+| Parameter | Description |
+|-----------|-------------|
+| `assetId` | The ID of the asset to mark as sold |
+| `dateSold` | Sale date in yyyy-MM-dd format (optional, defaults to today) |
+
+**Parameters of `UndoAssetSale`:**
+
+| Parameter | Description |
+|-----------|-------------|
+| `assetId` | The ID of the sold asset to restore |
+
+`ListSoldAssets` takes no parameters.
+
+### Indicators (IndicatorTools)
+
+<!-- Source: src/Valt.Infra/Mcp/Tools/IndicatorTools.cs -->
+Bitcoin macro indicators, refreshed in the background and served from cache.
+
+| Tool | Description |
+|------|-------------|
+| `GetBitcoinIndicators` | Gets current Bitcoin macro indicators: Mayer Multiple, Rainbow Chart, Fear & Greed Index, and Bitcoin Dominance |
 
 ## Use Cases 💡
 
@@ -435,3 +547,4 @@ AI: Analyzing your finances for January/2025...
 - [Import and Export](importar-exportar.md) - Traditional CSV import
 - [Reports](relatorios.md) - Visual financial analysis
 - [Average Price](preco-medio.md) - Track your Bitcoin acquisition cost
+- [Assets](ativos.md) - External investments, BTC loans, and sold asset history
