@@ -104,7 +104,17 @@ Quando chegar a hora de pagar uma despesa fixa:
 1. Na seção de **Despesas Fixas** na tela principal, localize a despesa e clique duas vezes ou aperte Enter
 2. A tela de adicionar transação será aberta com os dados pré-preenchidos. Edite o que for necessário e pronto. Aquela transação estará vinculada à sua despesa fixa.
 
-DICAS: você pode também realizar outras operações como ignorar aquela despesa fixa somente naquele mês, ou manualmente vincular uma despesa fixa a uma transação existente ao manter a despesa fixa desejada selecionada no menu lateral e clicando com o botão direito em uma transação, aonde aparecerá a opção de Vincular a Despesa Fixa.
+Cada ocorrência de uma despesa fixa pode estar em um de quatro estados:
+
+<!-- Source: src/Valt.Core/Modules/Budget/FixedExpenses/FixedExpenseRecordState.cs + src/Valt.UI/Lang/language.pt-BR.resx FixedExpenseOverview.Status.* -->
+| Estado | Significado |
+|--------|-------------|
+| **Pago** | Já existe uma transação vinculada a essa data de referência. |
+| **Pago Manualmente** | Marcado como pago sem uma transação vinculada. |
+| **Ignorado** | Despesa ignorada para essa data de referência. |
+| **Pendente** | Nenhuma ação foi realizada ainda. |
+
+DICAS: com o botão direito sobre uma despesa fixa pendente, você pode usar as opções **Ignorar para essa data** ou **Marcar como pago**. Você pode também vincular manualmente uma despesa fixa a uma transação existente: mantenha a despesa fixa desejada selecionada no menu lateral e clique com o botão direito em uma transação, onde aparecerá a opção de Vincular a Despesa Fixa.
 
 ## Gerenciando Despesas Fixas
 
