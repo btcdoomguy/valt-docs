@@ -1,6 +1,6 @@
 # Servidor MCP 🤖
 
-O Valt inclui um servidor MCP (Model Context Protocol) integrado que permite a interação com suas finanças usando linguagem natural através de modelos de IA. Com mais de 45 ferramentas disponíveis, você pode consultar dados, criar transações, gerenciar contas e muito mais - tudo através de conversas com sua IA favorita.
+O Valt inclui um servidor MCP (Model Context Protocol) integrado que permite a interação com suas finanças usando linguagem natural através de modelos de IA. Com mais de 80 ferramentas disponíveis, você pode consultar dados, criar transações, gerenciar contas e muito mais - tudo através de conversas com sua IA favorita.
 
 ## O Que é MCP 🔗
 
@@ -130,7 +130,7 @@ http://localhost:5200/mcp
 
 ## Ferramentas Disponíveis 🛠️
 
-O servidor MCP do Valt expõe mais de 45 ferramentas organizadas por categoria.
+O servidor MCP do Valt expõe mais de 80 ferramentas organizadas por categoria.
 
 ### Contas (AccountTools)
 
@@ -547,3 +547,4 @@ IA: Analisando suas finanças de janeiro/2025...
 - [Importar e Exportar](importar-exportar.md) - Importação tradicional via CSV
 - [Relatórios](relatorios.md) - Análise visual das finanças
 - [Preço Médio](preco-medio.md) - Controle seu custo de aquisição de Bitcoin
+- [Ativos](ativos.md) - Investimentos externos, empréstimos BTC e histórico de ativos vendidos
