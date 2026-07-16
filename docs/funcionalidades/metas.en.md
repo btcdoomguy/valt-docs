@@ -10,26 +10,63 @@ Goals are financial objectives with a defined timeframe that Valt monitors autom
 
 Valt offers different goal types for different objectives:
 
+<!-- Source: src/Valt.Core/Modules/Goals/GoalTypeNames.cs + src/Valt.UI/Lang/language.resx -->
+
+## Price Data and Exchange Rates
+
+Some goals depend on price data and exchange rates to convert values between currencies or into bitcoin. When the displayed value depends on this data, Valt shows an asterisk (*) next to the goal.
+
+<!-- Source: src/Valt.UI/Views/Main/Tabs/Transactions/Models/GoalEntryViewModel.cs + GoalsPanelView.axaml -->
+
+The six price-dependent goal types are:
+
+- **Fiat Income** — converts income in different currencies to your main fiat currency.
+- **Spending Limit** — converts spending in different currencies to your main fiat currency.
+- **Category Budget** — converts category spending to your main fiat currency.
+- **Save Fiat** — calculates net savings (income minus expenses) across currencies.
+- **Savings Rate** — calculates the savings percentage from income and expenses.
+- **Net Worth in BTC** — converts account balances to satoshis using the BTC price.
+
+The asterisk indicates that the value may be temporarily outdated until the next exchange-rate update is applied. Hover over the asterisk to see the following message:
+
+> *This value may be outdated and will be updated when daily exchange rates are available.*
+
+<!-- Source: src/Valt.UI/Lang/language.resx Goals_PriceDataTooltip -->
+
 ### Progress Goals (Accumulation)
 
 These goals start at 0% and increase as you make progress. Upon reaching 100%, the goal is marked as **completed**.
 
+<!-- Source: src/Valt.Core/Modules/Goals/ProgressionMode.cs ZeroToSuccess -->
+
 | Type | Description | Example |
 |------|-------------|---------|
-| **Stack Bitcoin** | Accumulate a quantity of satoshis | "Stack 1 million sats this month" |
-| **DCA** | Make a number of Bitcoin purchases | "Make 4 BTC purchases this month" |
-| **Fiat Income** | Reach a fiat currency income target | "Earn $10,000 this month" |
-| **Bitcoin Income** | Receive a quantity of satoshis | "Receive 500,000 sats in income this month" |
+| **Stack Bitcoin** | Defines a specific quantity to stack on the selected period compared to the previous quantity | "Stack 1 million more sats this month" |
+| **DCA** | Track regular bitcoin purchases (Dollar Cost Averaging) | "Make 4 BTC purchases this month" |
+| **Fiat Income** | Track income targets in your main fiat currency | "Earn $10,000 this month" |
+| **Bitcoin Income** | Track bitcoin income targets (e.g. from work, mining, rewards) | "Receive 500,000 sats in income this month" |
+| **Save Fiat** | Save a target fiat amount (income minus expenses) | "Save $1,000 this month" |
+| **Savings Rate** | Save a target percentage of income | "Save 20% of income this month" |
+| **Net Worth in BTC** | Reach a target net worth in bitcoin | "Reach a net worth of 50,000,000 sats (0.5 BTC)" |
 
 ### Limit Goals (Control)
 
 These goals also start at 0%, but increase as you approach the limit. Upon reaching 100%, the goal is marked as **failed**.
 
+<!-- Source: src/Valt.Core/Modules/Goals/ProgressionMode.cs DecreasingSuccess -->
+
 | Type | Description | Example |
 |------|-------------|---------|
-| **Spending Limit** | Don't exceed a spending amount | "Spend at most $3,000 this month" |
-| **Reduce Category** | Limit spending in a specific category | "Spend at most $500 on delivery" |
-| **HODL Bitcoin** | Limit Bitcoin sales | "Sell at most 100,000 sats" |
+| **Spending Limit** | Track spending against a budget limit in your main fiat currency | "Spend at most $3,000 this month" |
+| **Category Budget** | Limit spending in a specific category | "Spend at most $500 on delivery" |
+| **HODL** | Track bitcoin sales. Set to 0 for full HODL mode (no sales allowed) | "Sell at most 100,000 sats" |
+
+**Net Worth in BTC** sums all visible account balances (fiat accounts, bitcoin accounts, external assets, and BTC-backed loans) and converts the total to satoshis before comparing it to the target. Only accounts marked as visible are included in the calculation.
+
+<!-- Source: src/Valt.Core/Modules/Goals/GoalTypes/NetWorthBtcGoalType.cs + NetWorthBtcProgressCalculator.cs -->
+
+!!! note "Save Fiat vs Fiat Income"
+    **Save Fiat** tracks net savings (`income − expenses`), while **Fiat Income** tracks raw income toward a target. Use *Save Fiat* when you want to measure how much is left at the end of the month, and *Fiat Income* when you only want to track an income target.
 
 ## How Progress Works
 
@@ -94,15 +131,25 @@ Progress bar: 50% (red)
 #### Bitcoin Income
 - **Target value**: Quantity of satoshis you want to receive as income
 
+#### Save Fiat
+- **Target savings amount**: How much you want to save in the period
+- **Currency**: In which currency
+
+#### Savings Rate
+- **Target savings rate (%)**: Percentage of income you want to save
+
+#### Net Worth in BTC
+- **Target value (sats)**: Desired net worth in satoshis
+
 #### Spending Limit
 - **Limit value**: Maximum you can spend
 - **Currency**: In which currency
 
-#### Reduce Category
+#### Category Budget
 - **Limit value**: Maximum you can spend
 - **Category**: Which category you want to control
 
-#### HODL Bitcoin
+#### HODL
 - **Sell limit**: Maximum satoshis you can sell (0 = full HODL)
 
 ## Goal States
@@ -135,25 +182,27 @@ A goal can be in three states:
 
 ### Recalculating
 
-If a goal was marked as Completed or Failed, but you want to recalculate:
+If a goal was marked as **Completed** or **Failed**, but you want to recalculate:
 
 1. Right-click the goal
 2. Select **Recalculate**
-3. The goal returns to "Open" state and progress is recalculated
+3. The goal returns to **Open** state and progress is recalculated with the latest data
 
-This is useful when you edit past transactions that affect the goal.
+This is useful when you edit past transactions that affect the goal, or when you want to re-evaluate a completed goal against new transactions.
+
+<!-- Source: src/Valt.Core/Modules/Goals/Goal.cs Recalculate() -->
 
 ## Automatic Calculation
 
-Valt automatically recalculates your goals' progress when:
+Valt automatically recalculates your goals' progress when transactions are created, edited, or deleted, and when exchange rates are updated. When something changes, Valt marks affected goals as stale and recalculates progress in the background.
 
-- A new transaction is created
-- A transaction is edited
-- A transaction is deleted
-- Exchange rates are updated (for goals involving currency conversion)
+<!-- Source: src/Valt.Core/Modules/Goals/Goal.cs IsUpToDate + MarkAsStale() + GoalProgressUpdaterJob.cs -->
 
-!!! info "Multi-Currency Goals"
-    **Fiat Income**, **Spending Limit**, and **Reduce Category** goals use exchange rate data to convert transactions in different currencies. These goals display an asterisk (*) indicating they depend on price data.
+The asterisk (*) displayed next to some goals indicates that the value depends on exchange-rate data and may be temporarily outdated. The tooltip message explains that the value will be updated when daily exchange rates are available. This same staleness mechanism is what allows Valt to know which goals need to be recalculated when new data arrives.
+
+<!-- Source: src/Valt.Infra/Modules/Goals/Services/GoalProgressState.cs + GoalProgressUpdaterJob.cs -->
+
+When recalculation completes, accumulation goals that reach 100% are marked as **Completed**, and limit goals that reach 100% are marked as **Failed**. You do not need to do anything manually; the system updates the states automatically.
 
 ## Display
 
@@ -191,7 +240,7 @@ The progress bar is animated, smoothly showing the transition when progress chan
 - **Objective**: Don't exceed your monthly budget
 
 **Category Control:**
-- **Type**: Reduce Category
+- **Type**: Category Budget
 - **Period**: Monthly
 - **Category**: Food > Delivery
 - **Limit**: $400
@@ -200,16 +249,46 @@ The progress bar is animated, smoothly showing the transition when progress chan
 ### Bitcoin Preservation
 
 **Full HODL:**
-- **Type**: HODL Bitcoin
+- **Type**: HODL
 - **Period**: Yearly
 - **Sell limit**: 0 sats
 - **Objective**: Don't sell any Bitcoin during the year (any sale will mark the goal as failed)
 
 **Partial HODL:**
-- **Type**: HODL Bitcoin
+- **Type**: HODL
 - **Period**: Monthly
 - **Sell limit**: 500,000 sats
 - **Objective**: Limit emergency sales
+
+### Save Fiat
+
+**Monthly Savings Goal:**
+- **Type**: Save Fiat
+- **Period**: Monthly
+- **Target**: $1,000
+- **Objective**: Track how much net income remains after expenses this month
+- **Progress**: If income is $5,000 and expenses are $4,200, savings are $800 → 80% progress
+
+!!! note "Save Fiat vs Fiat Income"
+    **Save Fiat** tracks net savings (`income − expenses`), while **Fiat Income** tracks raw income toward a target. Use *Save Fiat* to measure what is left at the end of the month and *Fiat Income* to track only an income target.
+
+### Savings Rate
+
+**Monthly Savings Rate Goal:**
+- **Type**: Savings Rate
+- **Period**: Monthly
+- **Target**: 20%
+- **Objective**: Save at least 20% of income this month
+- **Progress**: If income is $5,000 and expenses are $4,000, the savings rate is 20% → 100% progress (Completed)
+
+### Net Worth in BTC
+
+**Yearly Net Worth Goal:**
+- **Type**: Net Worth in BTC
+- **Period**: Yearly
+- **Target**: 50,000,000 sats (0.5 BTC)
+- **Objective**: Reach a total net worth of 0.5 BTC across all accounts
+- **Progress**: Valt sums all visible account balances (fiat, bitcoin, assets, loans) in satoshis; if the total is 45,000,000 sats → 90% progress
 
 ## Best Practices ✨
 
@@ -233,7 +312,7 @@ The progress bar is animated, smoothly showing the transition when progress chan
 
 ### Use Categories to Your Advantage
 
-For "Reduce Category" goals:
+For "Category Budget" goals:
 - Create specific categories for spending you want to control
 - Example: Create "Entertainment > Delivery" to monitor food orders
 
