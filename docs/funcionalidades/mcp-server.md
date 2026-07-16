@@ -327,6 +327,15 @@ Marcar um ativo como vendido oculta o ativo da lista ativa e o move para o hist�
 
 `ListSoldAssets` não recebe parâmetros.
 
+### Indicadores (IndicatorTools)
+
+<!-- Source: src/Valt.Infra/Mcp/Tools/IndicatorTools.cs -->
+Indicadores macro do Bitcoin, atualizados em segundo plano e servidos a partir de cache.
+
+| Ferramenta | Descrição |
+|------------|-----------|
+| `GetBitcoinIndicators` | Retorna os indicadores macro atuais do Bitcoin: Mayer Multiple, Rainbow Chart, Fear & Greed Index e dominância do BTC |
+
 ## Casos de Uso 💡
 
 ### Consultando Dados
