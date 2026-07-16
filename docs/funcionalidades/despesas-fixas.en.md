@@ -73,6 +73,10 @@ You can link a fixed expense to a specific account:
 - Useful for expenses that can be paid different ways
 - Example: Electric bill can be paid via transfer from any bank
 
+<!-- Source: src/Valt.Core/Modules/Budget/FixedExpenses/FixedExpense.cs SetDefaultAccountId/SetCurrency + src/Valt.UI/Lang/language.resx ManageFixedExpenses.CurrencyDefinition.* -->
+!!! info "Account or currency, not both"
+    A fixed expense is bound to either an **account** or a **currency**, never both. In the editor, choose **From default account** to link a fiat account, or **Direct set** to choose a currency directly. Selecting one mode clears the other.
+
 ## Value History (Ranges) 📈
 
 A powerful feature is value history. When the value of an expense changes, you can keep a record:
@@ -104,7 +108,17 @@ When it's time to pay a fixed expense:
 1. In the **Fixed Expenses** section on the main screen, locate the expense and double-click or press Enter
 2. The add transaction screen will open with pre-filled data. Edit what's needed and you're done. That transaction will be linked to your fixed expense.
 
-TIPS: you can also perform other operations like ignoring that fixed expense only for that month, or manually link a fixed expense to an existing transaction by keeping the desired fixed expense selected in the sidebar and right-clicking on a transaction, where the Link to Fixed Expense option will appear.
+Each occurrence of a fixed expense can be in one of four states:
+
+<!-- Source: src/Valt.Core/Modules/Budget/FixedExpenses/FixedExpenseRecordState.cs + src/Valt.UI/Lang/language.resx FixedExpenseOverview.Status.* -->
+| State | Meaning |
+|-------|---------|
+| **Paid** | A transaction is already linked to that reference date. |
+| **Manually Paid** | Marked as paid without a linked transaction. |
+| **Ignored** | Expense ignored for that reference date. |
+| **Pending** | No action has been taken yet. |
+
+TIPS: right-clicking a pending fixed expense lets you use the **Ignore for this date** or **Mark as paid** options. You can also manually link a fixed expense to an existing transaction: keep the desired fixed expense selected in the sidebar and right-click on a transaction, where the Link to Fixed Expense option will appear.
 
 ## Managing Fixed Expenses
 
@@ -133,6 +147,16 @@ If you want to temporarily stop seeing a fixed expense (e.g., canceled Netflix):
 3. Save
 
 It won't appear in the main list, but the history is preserved.
+
+## Yearly Overview
+
+<!-- Source: src/Valt.UI/Views/Main/Modals/FixedExpenseOverview/FixedExpenseOverviewView.axaml + FixedExpenseOverviewViewModel.cs + src/Valt.UI/Views/Main/Tabs/Transactions/FixedExpensesPanelView.axaml + src/Valt.UI/Lang/language.resx -->
+The yearly overview screen is opened from the calendar icon in the Fixed Expenses panel header, on the **Transactions** tab. It displays a grid with the 12 months of the selected year, showing, for each expense, the expected amount, the actual amount, and the occurrence status. The year selector lets you switch between available years, and the **Paid Total** and **Future Expenses** totals are displayed in the footer.
+
+### Out-of-range detection
+
+<!-- Source: src/Valt.UI/Views/Main/Modals/FixedExpenseOverview/FixedExpenseOverviewViewModel.cs IsAmountOutOfRange -->
+When a fixed expense has a fixed amount, the system flags the occurrence if the paid amount differs from the expected value. For expenses with a variable amount, the occurrence is flagged when the paid amount falls outside the expected minimum–maximum range.
 
 ## Fixed Expenses Report 📊
 
