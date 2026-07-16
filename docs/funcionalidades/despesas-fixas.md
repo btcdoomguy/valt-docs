@@ -73,6 +73,10 @@ Você pode vincular uma despesa fixa a uma conta específica:
 - Útil para despesas que podem ser pagas de diferentes formas
 - Exemplo: Conta de luz pode ser paga via PIX de qualquer banco
 
+<!-- Source: src/Valt.Core/Modules/Budget/FixedExpenses/FixedExpense.cs SetDefaultAccountId/SetCurrency + src/Valt.UI/Lang/language.pt-BR.resx ManageFixedExpenses.CurrencyDefinition.* -->
+!!! info "Conta ou moeda, não ambos"
+    Uma despesa fixa é vinculada a uma **conta** ou a uma **moeda**, nunca aos dois. No editor, escolha **Da conta padrão** para vincular uma conta fiat, ou **Definição direta** para escolher uma moeda diretamente. Selecionar um modo limpa o outro.
+
 ## Histórico de Valores (Ranges) 📈
 
 Uma funcionalidade poderosa é o histórico de valores. Quando o valor de uma despesa muda, você pode manter um registro:
