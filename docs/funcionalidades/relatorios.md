@@ -58,8 +58,8 @@ Título: **Patrimônio**
 |--------|-------|
 | **Total (as BTC)** | Patrimônio total representado em BTC |
 | **Total (as Fiat)** | Patrimônio total na moeda fiat principal |
-| **Meu Stack** | Stack de BTC em BTC |
-| **Meu Outro** | Patrimônio não-BTC na moeda fiat principal |
+| **BTC** | Stack de BTC em BTC |
+| **Fiat** | Patrimônio não-BTC na moeda fiat principal |
 | **Total (em USD)** | Patrimônio total em USD (somente quando a moeda principal não é USD) |
 | **Meus Ativos** | Valor de ativos externos na moeda fiat principal |
 | **% à Vista em BTC** | Percentual do patrimônio total em BTC spot |
@@ -218,8 +218,8 @@ Mostra as tendências de patrimônio em fiat e em BTC ao longo do período selec
 | **Patrimônio total** | Patrimônio total na moeda fiat principal |
 | **% do último mês** | Variação percentual em relação ao mês anterior (fiat) |
 | **% do último ano** | Variação percentual em relação ao ano anterior (fiat) |
-| **Todas as entradas em fiat** | Total de receitas em fiat (incluindo conversões) |
-| **Todas as saídas em fiat** | Total de despesas em fiat (incluindo conversões) |
+| **Entradas (Total)** | Total de receitas em fiat (incluindo conversões) |
+| **Saídas (Total)** | Total de despesas em fiat (incluindo conversões) |
 | **Entradas (Fiat)** | Receitas em fiat |
 | **Saídas (Fiat)** | Despesas em fiat |
 | **BTC Comprados** | Quantidade de BTC comprados no mês |
