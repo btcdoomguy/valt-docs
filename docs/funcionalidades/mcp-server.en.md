@@ -134,27 +134,30 @@ Valt's MCP server exposes over 80 tools organized by category.
 
 ### Accounts (AccountTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/Budget/AccountTools.cs -->
 | Tool | Description |
 |------|-------------|
-| `GetAccounts` | Lists all accounts |
-| `CreateAccount` | Creates a new account |
-| `EditAccount` | Edits an existing account |
-| `DeleteAccount` | Removes an account |
-| `GetAccountBalance` | Gets an account's balance |
-| `GetAccountHistory` | Account balance history |
+| `GetAccounts` | Lists all accounts with their current balances |
+| `GetAccount` | Gets a single account by its ID |
+| `GetAccountGroups` | Lists all account groups |
+| `CreateFiatAccount` | Creates a new fiat currency account (e.g., bank account, credit card) |
+| `CreateBtcAccount` | Creates a new Bitcoin account (e.g., cold storage, exchange wallet) |
+| `EditAccount` | Edits an existing account's properties (all fields are required) |
+| `DeleteAccount` | Deletes an account (will fail if it has transactions) |
 
 ### Transactions (TransactionTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/Budget/TransactionTools.cs -->
 | Tool | Description |
 |------|-------------|
-| `GetTransactions` | Lists transactions with filters |
-| `AddFiatExpense` | Adds a fiat expense |
-| `AddFiatIncome` | Adds fiat income |
-| `AddBitcoinExpense` | Adds a Bitcoin expense |
-| `AddBitcoinIncome` | Adds Bitcoin income |
-| `AddFiatToFiatTransfer` | Transfer between fiat accounts |
-| `AddBitcoinToBitcoinTransfer` | Transfer between wallets |
-| `AddBitcoinPurchase` | Bitcoin purchase |
+| `GetTransactions` | Lists transactions with optional filtering by date, account, category, or search term |
+| `AddFiatExpense` | Adds a fiat expense transaction (money leaving a fiat account) |
+| `AddFiatIncome` | Adds a fiat income transaction (money entering a fiat account) |
+| `AddFiatToFiatTransfer` | Adds a transfer between two fiat accounts |
+| `AddBitcoinExpense` | Adds a Bitcoin expense transaction (sats leaving a BTC account) |
+| `AddBitcoinIncome` | Adds a Bitcoin income transaction (sats entering a BTC account) |
+| `AddBitcoinPurchase` | Adds a Bitcoin purchase (fiat leaves, BTC enters) |
+| `DeleteTransaction` | Deletes a transaction |
 
 ### Categories (CategoryTools)
 
@@ -167,62 +170,75 @@ Valt's MCP server exposes over 80 tools organized by category.
 
 ### Fixed Expenses (FixedExpenseTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/Budget/FixedExpenseTools.cs -->
 | Tool | Description |
 |------|-------------|
-| `GetFixedExpenses` | Lists fixed expenses |
-| `CreateFixedExpense` | Creates a fixed expense |
-| `EditFixedExpense` | Edits a fixed expense |
-| `DeleteFixedExpense` | Removes a fixed expense |
-| `GetFixedExpenseHistory` | Payment history |
+| `GetFixedExpenses` | Gets all fixed/recurring expenses |
+| `GetFixedExpense` | Gets a single fixed expense by its ID |
+| `CreateMonthlyFixedExpense` | Creates a new monthly fixed expense with a constant amount |
+| `CreateMonthlyVariableExpense` | Creates a new monthly fixed expense with a variable amount range |
+| `EditFixedExpense` | Edits an existing fixed expense's name, category, and enabled status |
+| `DeleteFixedExpense` | Deletes a fixed expense (transactions will lose their association) |
 
 ### Goals (GoalTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/GoalTools.cs -->
 | Tool | Description |
 |------|-------------|
-| `GetGoals` | Lists all goals |
-| `CreateStackBitcoinGoal` | Stack Bitcoin goal |
-| `CreateDCAGoal` | DCA goal |
-| `CreateFiatIncomeGoal` | Fiat income goal |
-| `CreateBitcoinIncomeGoal` | Bitcoin income goal |
-| `CreateSpendingLimitGoal` | Spending limit goal |
-| `CreateReduceCategoryGoal` | Reduce category goal |
-| `CreateHodlBitcoinGoal` | HODL goal |
+| `GetGoals` | Gets all financial goals, optionally filtered to goals containing a specific date |
+| `GetGoal` | Gets a single financial goal by its ID |
+| `CreateStackBitcoinGoal` | Creates a goal to stack a target amount of Bitcoin (sats) |
+| `CreateSpendingLimitGoal` | Creates a goal to limit fiat spending to a maximum amount |
+| `CreateDcaGoal` | Creates a DCA goal to make a target number of Bitcoin purchases |
+| `CreateIncomeFiatGoal` | Creates a goal to earn a target amount of fiat income |
+| `CreateIncomeBtcGoal` | Creates a goal to earn a target amount of Bitcoin income (sats) |
+| `CreateReduceExpenseCategoryGoal` | Creates a goal to limit spending in a specific category |
+| `CreateBitcoinHodlGoal` | Creates a goal to limit Bitcoin selling (HODL goal) |
+| `CreateSaveFiatGoal` | Creates a goal to save a target fiat amount (income minus expenses) |
+| `CreateSavingsRateGoal` | Creates a goal to save a target percentage of income |
+| `CreateNetWorthBtcGoal` | Creates a goal to reach a target net worth in bitcoin (sats) |
+| `DeleteGoal` | Deletes a financial goal |
 
 ### Average Price (AvgPriceTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/AvgPriceTools.cs -->
 | Tool | Description |
 |------|-------------|
-| `GetAvgPriceProfiles` | Lists average price profiles |
-| `CreateAvgPriceProfile` | Creates a profile |
-| `EditAvgPriceProfile` | Edits a profile |
-| `DeleteAvgPriceProfile` | Removes a profile |
-| `GetAvgPriceLines` | Lists lines from a profile |
-| `AddAvgPriceBuyLine` | Adds a purchase |
-| `AddAvgPriceSellLine` | Adds a sale |
-| `AddAvgPriceTransferInLine` | Adds an incoming transfer |
-| `AddAvgPriceTransferOutLine` | Adds an outgoing transfer |
-| `EditAvgPriceLine` | Edits a line |
-| `DeleteAvgPriceLine` | Removes a line |
+| `GetProfiles` | Gets all average price/cost basis tracking profiles |
+| `GetProfile` | Gets a single average price profile by its ID |
+| `GetProfileLines` | Gets all buy/sell/setup lines for an average price profile |
+| `CreateBrazilianRuleProfile` | Creates a new average price profile using Brazilian Rule calculation (weighted average) |
+| `CreateFifoProfile` | Creates a new average price profile using FIFO calculation (First-In-First-Out) |
+| `EditProfile` | Edits an average price profile |
+| `DeleteProfile` | Deletes an average price profile and all its lines |
+| `AddBuyLine` | Adds a buy (acquisition) line to an average price profile |
+| `AddSellLine` | Adds a sell (disposal) line to an average price profile |
+| `AddSetupLine` | Adds a setup line (initial position) to an average price profile |
+| `EditLine` | Edits an existing line in an average price profile |
+| `DeleteLine` | Deletes a line from an average price profile |
 
 ### Reports (ReportTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/ReportTools.cs -->
 | Tool | Description |
 |------|-------------|
-| `GetMonthlyTotals` | Monthly totals by category |
-| `GetWealthOverview` | Wealth overview |
-| `GetWealthHistory` | Wealth evolution history |
-| `GetCategoryStatistics` | Statistics by category |
-| `GetIncomeVsExpenses` | Income vs expenses comparison |
-| `GetTopExpenseCategories` | Top spending categories |
+| `GetMonthlyTotals` | Gets monthly totals report with income, expenses, and bitcoin transactions over a date range |
+| `GetWealthOverview` | Gets wealth overview showing fiat and BTC totals over time periods (daily, weekly, monthly, yearly) |
+| `GetExpensesByCategory` | Gets expenses breakdown by category for a date range |
+| `GetIncomeByCategory` | Gets income breakdown by category for a date range |
+| `GetAllTimeHigh` | Gets all-time high wealth data including ATH value, date, and current decline percentage |
+| `GetMaxBtcStack` | Gets the maximum BTC stack ever held (lifetime high), the date it occurred, and decline from that peak |
+| `GetStatistics` | Gets financial statistics including median monthly expenses and wealth coverage in months |
 
 ### Currencies (CurrencyTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/CurrencyTools.cs -->
 | Tool | Description |
 |------|-------------|
-| `GetSupportedCurrencies` | Lists supported currencies |
-| `GetExchangeRate` | Current exchange rate |
-| `GetHistoricalPrice` | Historical price |
-| `ConvertCurrency` | Converts values between currencies |
+| `GetAvailableCurrencies` | Gets available fiat currencies and currencies currently in use by accounts, fixed expenses, and avg price profiles |
+| `GetMainCurrency` | Gets the main fiat currency configured for the application |
+| `ConvertCurrency` | Converts an amount between currencies (USD, BRL, BTC, SATS, etc.). Uses live rates when available, falls back to historical rates. |
+| `GetHistoricalPrice` | Gets historical price for BTC (in USD) or fiat currencies (relative to USD) at a specific date |
 
 ### Assets (AssetTools)
 

@@ -134,27 +134,30 @@ O servidor MCP do Valt expõe mais de 80 ferramentas organizadas por categoria.
 
 ### Contas (AccountTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/Budget/AccountTools.cs -->
 | Ferramenta | Descrição |
 |------------|-----------|
-| `GetAccounts` | Lista todas as contas |
-| `CreateAccount` | Cria uma nova conta |
-| `EditAccount` | Edita uma conta existente |
-| `DeleteAccount` | Remove uma conta |
-| `GetAccountBalance` | Obtém o saldo de uma conta |
-| `GetAccountHistory` | Histórico de saldo de uma conta |
+| `GetAccounts` | Lista todas as contas com seus saldos atuais |
+| `GetAccount` | Obtém uma conta pelo seu ID |
+| `GetAccountGroups` | Lista todos os grupos de contas |
+| `CreateFiatAccount` | Cria uma conta em moeda fiat (ex.: conta bancária, cartão de crédito) |
+| `CreateBtcAccount` | Cria uma conta Bitcoin (ex.: cold storage, wallet em exchange) |
+| `EditAccount` | Edita as propriedades de uma conta existente |
+| `DeleteAccount` | Remove uma conta (falha se ela tiver transações) |
 
 ### Transações (TransactionTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/Budget/TransactionTools.cs -->
 | Ferramenta | Descrição |
 |------------|-----------|
-| `GetTransactions` | Lista transações com filtros |
+| `GetTransactions` | Lista transações com filtros opcionais por data, conta, categoria ou termo de busca |
 | `AddFiatExpense` | Adiciona despesa em fiat |
 | `AddFiatIncome` | Adiciona receita em fiat |
+| `AddFiatToFiatTransfer` | Transferência entre contas fiat |
 | `AddBitcoinExpense` | Adiciona despesa em Bitcoin |
 | `AddBitcoinIncome` | Adiciona receita em Bitcoin |
-| `AddFiatToFiatTransfer` | Transferência entre contas fiat |
-| `AddBitcoinToBitcoinTransfer` | Transferência entre wallets |
-| `AddBitcoinPurchase` | Compra de Bitcoin |
+| `AddBitcoinPurchase` | Compra de Bitcoin (fiat sai, sats entram) |
+| `DeleteTransaction` | Remove uma transação |
 
 ### Categorias (CategoryTools)
 
@@ -167,62 +170,75 @@ O servidor MCP do Valt expõe mais de 80 ferramentas organizadas por categoria.
 
 ### Despesas Fixas (FixedExpenseTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/Budget/FixedExpenseTools.cs -->
 | Ferramenta | Descrição |
 |------------|-----------|
-| `GetFixedExpenses` | Lista despesas fixas |
-| `CreateFixedExpense` | Cria despesa fixa |
-| `EditFixedExpense` | Edita despesa fixa |
-| `DeleteFixedExpense` | Remove despesa fixa |
-| `GetFixedExpenseHistory` | Histórico de pagamentos |
+| `GetFixedExpenses` | Lista todas as despesas fixas/recorrentes |
+| `GetFixedExpense` | Obtém uma despesa fixa pelo seu ID |
+| `CreateMonthlyFixedExpense` | Cria uma despesa fixa mensal com valor constante |
+| `CreateMonthlyVariableExpense` | Cria uma despesa fixa mensal com faixa de valor variável (mínimo–máximo) |
+| `EditFixedExpense` | Edita nome, categoria e status de uma despesa fixa |
+| `DeleteFixedExpense` | Remove uma despesa fixa (as transações perdem a associação) |
 
 ### Metas (GoalTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/GoalTools.cs -->
 | Ferramenta | Descrição |
 |------------|-----------|
-| `GetGoals` | Lista todas as metas |
-| `CreateStackBitcoinGoal` | Meta de acumular Bitcoin |
-| `CreateDCAGoal` | Meta de DCA |
-| `CreateFiatIncomeGoal` | Meta de renda em fiat |
-| `CreateBitcoinIncomeGoal` | Meta de renda em Bitcoin |
-| `CreateSpendingLimitGoal` | Meta de limite de gastos |
-| `CreateReduceCategoryGoal` | Meta de reduzir categoria |
-| `CreateHodlBitcoinGoal` | Meta HODL |
+| `GetGoals` | Lista todas as metas, com filtro opcional por data |
+| `GetGoal` | Obtém uma meta pelo seu ID |
+| `CreateStackBitcoinGoal` | Meta de acumular um valor alvo em Bitcoin (sats) |
+| `CreateSpendingLimitGoal` | Meta de limitar os gastos em fiat a um valor máximo |
+| `CreateDcaGoal` | Meta de DCA: realizar um número alvo de compras de Bitcoin |
+| `CreateIncomeFiatGoal` | Meta de alcançar uma renda alvo em fiat |
+| `CreateIncomeBtcGoal` | Meta de alcançar uma renda alvo em Bitcoin (sats) |
+| `CreateReduceExpenseCategoryGoal` | Meta de limitar gastos em uma categoria específica |
+| `CreateBitcoinHodlGoal` | Meta de limitar vendas de Bitcoin (HODL) |
+| `CreateSaveFiatGoal` | Meta de poupar um valor alvo em fiat (receitas menos despesas) |
+| `CreateSavingsRateGoal` | Meta de poupar um percentual alvo da renda |
+| `CreateNetWorthBtcGoal` | Meta de alcançar um patrimônio líquido alvo em bitcoin (sats) |
+| `DeleteGoal` | Remove uma meta |
 
 ### Preço Médio (AvgPriceTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/AvgPriceTools.cs -->
 | Ferramenta | Descrição |
 |------------|-----------|
-| `GetAvgPriceProfiles` | Lista perfis de preço médio |
-| `CreateAvgPriceProfile` | Cria perfil |
-| `EditAvgPriceProfile` | Edita perfil |
-| `DeleteAvgPriceProfile` | Remove perfil |
-| `GetAvgPriceLines` | Lista linhas de um perfil |
-| `AddAvgPriceBuyLine` | Adiciona compra |
-| `AddAvgPriceSellLine` | Adiciona venda |
-| `AddAvgPriceTransferInLine` | Adiciona entrada |
-| `AddAvgPriceTransferOutLine` | Adiciona saída |
-| `EditAvgPriceLine` | Edita linha |
-| `DeleteAvgPriceLine` | Remove linha |
+| `GetProfiles` | Lista todos os perfis de preço médio/custo de aquisição |
+| `GetProfile` | Obtém um perfil pelo seu ID |
+| `GetProfileLines` | Lista as linhas de compra/venda/setup de um perfil |
+| `CreateBrazilianRuleProfile` | Cria um perfil com cálculo pela Regra Brasileira (média ponderada) |
+| `CreateFifoProfile` | Cria um perfil com cálculo FIFO (First-In-First-Out) |
+| `EditProfile` | Edita um perfil de preço médio |
+| `DeleteProfile` | Remove um perfil e todas as suas linhas |
+| `AddBuyLine` | Adiciona uma linha de compra (aquisição) a um perfil |
+| `AddSellLine` | Adiciona uma linha de venda (alienação) a um perfil |
+| `AddSetupLine` | Adiciona uma linha de setup (posição inicial) a um perfil |
+| `EditLine` | Edita uma linha existente de um perfil |
+| `DeleteLine` | Remove uma linha de um perfil |
 
 ### Relatórios (ReportTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/ReportTools.cs -->
 | Ferramenta | Descrição |
 |------------|-----------|
-| `GetMonthlyTotals` | Totais mensais por categoria |
-| `GetWealthOverview` | Visão geral do patrimônio |
-| `GetWealthHistory` | Histórico de evolução patrimonial |
-| `GetCategoryStatistics` | Estatísticas por categoria |
-| `GetIncomeVsExpenses` | Comparativo receita x despesa |
-| `GetTopExpenseCategories` | Categorias com mais gastos |
+| `GetMonthlyTotals` | Totais mensais de receitas, despesas e transações em bitcoin em um período |
+| `GetWealthOverview` | Visão geral do patrimônio em fiat e BTC por período (diário, semanal, mensal, anual) |
+| `GetExpensesByCategory` | Despesas por categoria em um período |
+| `GetIncomeByCategory` | Receitas por categoria em um período |
+| `GetAllTimeHigh` | Máxima histórica do patrimônio, com data e declínio atual em percentual |
+| `GetMaxBtcStack` | Maior stack de BTC já acumulado, com data e declínio desde o pico |
+| `GetStatistics` | Estatísticas financeiras: mediana de despesas mensais e cobertura do patrimônio em meses |
 
 ### Moedas (CurrencyTools)
 
+<!-- Source: src/Valt.Infra/Mcp/Tools/CurrencyTools.cs -->
 | Ferramenta | Descrição |
 |------------|-----------|
-| `GetSupportedCurrencies` | Lista moedas suportadas |
-| `GetExchangeRate` | Taxa de câmbio atual |
-| `GetHistoricalPrice` | Preço histórico |
-| `ConvertCurrency` | Converte valores entre moedas |
+| `GetAvailableCurrencies` | Lista as moedas fiat disponíveis e as atualmente em uso |
+| `GetMainCurrency` | Retorna a moeda fiat principal configurada no aplicativo |
+| `ConvertCurrency` | Converte valores entre moedas (USD, BRL, BTC, SATS etc.), usando cotações ao vivo quando disponíveis |
+| `GetHistoricalPrice` | Preço histórico do BTC (em USD) ou de moedas fiat (relativo ao USD) em uma data |
 
 ### Ativos (AssetTools)
 
