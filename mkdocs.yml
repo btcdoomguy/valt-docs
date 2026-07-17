@@ -22,6 +22,7 @@ plugins:
             Installation: Instalação
             Getting Started: Primeiros Passos
             Basic Concepts: Conceitos Básicos
+            Settings: Configurações
             Features: Funcionalidades
             Accounts: Contas
             Transactions: Transações
@@ -45,6 +46,7 @@ plugins:
             Instalação: Installation
             Primeiros Passos: Getting Started
             Conceitos Básicos: Basic Concepts
+            Configurações: Settings
             Funcionalidades: Features
             Contas: Accounts
             Transações: Transactions
@@ -89,6 +91,7 @@ nav:
     - Installation: guia/instalacao.md
     - Getting Started: guia/primeiros-passos.md
     - Basic Concepts: guia/conceitos-basicos.md
+    - Settings: guia/configuracoes.md
   - Features:
     - Accounts: funcionalidades/contas.md
     - Transactions: funcionalidades/transacoes.md

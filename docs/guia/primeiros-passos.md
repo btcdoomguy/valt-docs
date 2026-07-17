@@ -45,7 +45,7 @@ Antes de lançar transações, você precisa criar as contas que representam ond
 
 O Valt já vem com categorias padrão, mas você pode personalizá-las.
 
-1. Acesse o menu de configurações
+1. Acesse o menu de [Configurações](configuracoes.md)
 2. Clique em **Gerenciar Categorias**
 3. Aqui você pode:
    - Adicionar novas categorias

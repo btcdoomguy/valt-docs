@@ -22,7 +22,7 @@ The **Model Context Protocol (MCP)** is an open protocol created by Anthropic th
 ### Activating the Feature
 
 1. Open Valt
-2. Go to **Settings** > **Advanced**
+2. Go to **[Settings](../guia/configuracoes.md)** > **Advanced**
 3. Enable **"Enable MCP Server feature"**
 4. Click **Save**
 

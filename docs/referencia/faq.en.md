@@ -85,7 +85,7 @@ It's a feature that automatically calculates how much a fiat transaction represe
 2. Verify there are no duplicate transactions
 3. Check the account's initial balance
 4. Compare with the real statement from the bank/wallet
-5. In the settings screen, advanced > Clear the account balance cache
+5. In the [settings screen](../guia/configuracoes.md), advanced > Clear the account balance cache
 
 ## Average Price 📊
 

@@ -45,7 +45,7 @@ Before recording transactions, you need to create accounts that represent where 
 
 Valt comes with default categories, but you can customize them.
 
-1. Access the settings menu
+1. Access the [Settings](configuracoes.md) menu
 2. Click **Manage Categories**
 3. Here you can:
    - Add new categories

@@ -85,7 +85,7 @@ Sim, você pode criar quantas contas precisar. Recomendamos uma conta para cada 
 2. Confira se não há transações duplicadas
 3. Verifique o saldo inicial da conta
 4. Compare com o extrato real do banco/wallet
-5. Na tela de configurações, avançado > Limpar o cache do saldo em conta
+5. Na tela de [configurações](../guia/configuracoes.md), avançado > Limpar o cache do saldo em conta
 
 ## Preço Médio 📊
 
